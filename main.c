@@ -88,6 +88,9 @@ int main(){
     ft_printf("A >%.p<\n", t);*/
 	
 	int a = -12;
-	printf("|%.*s|\n", -4,"asdfs");
-	ft_printf("|%.*s|\n", -4,"asdfs");
+	printf("|%-2.4s|\n", 0);
+	ft_printf("|%-2.4s|\n",0);
+	printf("|%.6s|\n", 0);
+	ft_printf("|%.6s|\n",0);
+
 }

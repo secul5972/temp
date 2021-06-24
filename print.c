@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:17:22 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 21:26:59 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/25 04:12:26 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,28 @@ char	*print_s(va_list ap, t_cond *stat)
 	char	*s;
 	char	*ret;
 	t_idx	idx;
+	int		n_flag;
 
+	n_flag = 0;
 	s = va_arg(ap, char *);
+	if (!s)
+	{
+		s = malloc(6);
+		s[0] = '(';
+		s[1] = 'n';
+		s[2] = 'u';
+		s[3] = 'l';
+		s[4] = 'l';
+		s[5] = ')';
+		n_flag = 1;
+	}
 	idx.len = ft_strlen(s);
 	idx.prec = ft_min(idx.len, stat->prec);
+	if(n_flag && stat->prec < idx.len)
+		idx.prec = 0;
+
 	idx.width = ft_max(stat->width, idx.prec);
+
 	idx.offset = (stat->flag & (1 << 1)) ? 0 : idx.width - idx.prec;
 	if (!(ret = (char *)malloc(sizeof(char) * (idx.width + 1))))
 		return (0);
@@ -76,6 +93,15 @@ char	*get_c_arr(va_list ap, t_cond *stat)
 		ret = ft_ntoa(va_arg(ap, long long), 16, stat);
 	if (ret[0] == '0' && ret[1] == 0 && stat->prec == 0)
 		ret[0] = 0;
+	if (ret[0] == '0' && ret[1] == 'x' && ret[2] == '0' && ret[3] == 0)
+	{
+		ret[0] = '(';
+		ret[1] = 'n';
+		ret[2] = 'i';
+		ret[3] = 'l';
+		ret[4] = ')';
+		stat->hex_flag = 0;
+	}
 	return (ret);
 }
 
@@ -125,7 +151,7 @@ char	*print_diuxp(va_list ap, t_cond *stat)
 	while (idx.i < idx.offset)
 		ret[idx.i++] = width_c;
 	fill_prec(&ret, &idx.i, idx.prec - idx.len, &ch_d);
-	while (idx.len-- - stat->m_flag)
+	while (idx.len-- - stat->m_flag - stat->hex_flag)
 		ret[idx.i++] = *(ch_d++);
 	while (idx.i < idx.width)
 		ret[idx.i++] = ' ';

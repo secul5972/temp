@@ -6,10 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/seungcoh/바탕화면/doing/temp/check.c
-ft_printf.h
-/home/seungcoh/바탕화면/doing/temp/ft_printf.h
-
 /home/seungcoh/바탕화면/doing/temp/ft_printf.h
 stdarg.h
 -
@@ -19,4 +15,8 @@ stdlib.h
 -
 stdio.h
 -
+
+/home/seungcoh/바탕화면/doing/temp/print.c
+ft_printf.h
+/home/seungcoh/바탕화면/doing/temp/ft_printf.h
 
