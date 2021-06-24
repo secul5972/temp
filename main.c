@@ -20,7 +20,7 @@ int main(){
 	printf("[%-c]sdfsdf[%-12.10s]dfdfsdf\n",c,s);
 	ft_printf("[%-c]sdfsdf[%-12.10s]dfdfsdf\n",c,s);
 	printf("[%0c]sdfsdf[%03.4s]dfdfsdf\n",c,s);
-	ft_printf("[%0c]sdfsdf[%03.4s]dfdfsdf\n",c,s);*/
+	ft_printf("[%0c]sdfsdf[%03.4s]dfdfsdf\n",c,s);
 	
 
 	printf("ddfsd[%10.3d]k\n", 2000);
@@ -29,7 +29,7 @@ int main(){
 	ft_printf("ddfsd[%10.5d]k\n", 200);
 	printf("ddfsd[%010d]k\n", 200);
 	ft_printf("ddfsd[%010d]k\n", 200);
-	/*printf("ddfsd[%10.13d]k\n", 200);
+	printf("ddfsd[%10.13d]k\n", 200);
 	ft_printf("ddfsd[%10.13d]k\n", 200);
 	printf("ddfsd[%-*.2d]d\n", 10, 200);
 	ft_printf("ddfsd[%-*.2d]d\n", 10,200);
@@ -85,9 +85,9 @@ int main(){
     ft_printf("7 >%10.4p<\n", t);	//warning
     ft_printf("8 >%.4p<\n", t);	//warning
     ft_printf("9 >%.1p<\n", t);	//warning
-    ft_printf("A >%.p<\n", t);
+    ft_printf("A >%.p<\n", t);*/
 	
-	int a = 0;
-	printf("%0.d\n", a);
-	ft_printf("%0.d\n", a);*/
+	int a = -12;
+	printf("|%0*.*d|\n", 4, -2, a);
+	ft_printf("|%0*.*d|\n", 4, -2, a);
 }

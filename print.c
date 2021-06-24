@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:17:22 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 19:58:14 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/24 21:26:59 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ char	*get_c_arr(va_list ap, t_cond *stat)
 		ret = ft_ntoa(va_arg(ap, unsigned int), 16, stat);
 	else if (stat->spec == 'p')
 		ret = ft_ntoa(va_arg(ap, long long), 16, stat);
-	if (ret[0] == '0' && ret[1] == 0 && stat->flag == 1)
+	if (ret[0] == '0' && ret[1] == 0 && stat->prec == 0)
 		ret[0] = 0;
 	return (ret);
 }
@@ -114,11 +114,18 @@ char	*print_diuxp(va_list ap, t_cond *stat)
 		return (0);
 	}
 	idx.i = 0;
-	width_c = (stat->flag & (1 << 0)) ? '0' : ' ';
+	width_c = ((stat->flag & (1 << 0)) && (stat->prec == -1)) ? '0' : ' ';
+	if ((stat->flag & 1) && !(stat->flag & 2) && (stat->m_flag == 1) && stat->width > idx.len && stat->prec == -1)
+	{
+		ret[idx.i++] = '-';
+		stat->m_flag = 0;
+		ch_d++;
+		idx.len--;
+	}
 	while (idx.i < idx.offset)
 		ret[idx.i++] = width_c;
 	fill_prec(&ret, &idx.i, idx.prec - idx.len, &ch_d);
-	while (idx.len--)
+	while (idx.len-- - stat->m_flag)
 		ret[idx.i++] = *(ch_d++);
 	while (idx.i < idx.width)
 		ret[idx.i++] = ' ';
