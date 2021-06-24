@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:17:22 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 14:44:17 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/24 16:21:11 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,8 @@ char	*print_s(va_list ap, t_cond *stat)
 	while (idx.i < idx.width)
 		ret[idx.i++] = ' ';
 	ret[idx.prec] = 0;
-	free(s);
+	if (!s)
+		free(s);
 	return (ret);
 }
 
@@ -115,6 +116,7 @@ char	*print_diuxp(va_list ap, t_cond *stat)
 	while (idx.i < idx.width)
 		ret[idx.i++] = ' ';
 	ret[idx.i] = 0;
-	free(ch_d);
+	if (!ch_d)
+		free(ch_d);
 	return (ret);
 }
