@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/seungcoh/바탕화면/temp
+CMAKE_SOURCE_DIR = /home/seungcoh/바탕화면/doing/temp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/seungcoh/바탕화면/temp/build
+CMAKE_BINARY_DIR = /home/seungcoh/바탕화면/doing/temp/build
 
 # Utility rule file for NightlyMemoryCheck.
 
@@ -71,6 +71,6 @@ CMakeFiles/NightlyMemoryCheck.dir/clean:
 .PHONY : CMakeFiles/NightlyMemoryCheck.dir/clean
 
 CMakeFiles/NightlyMemoryCheck.dir/depend:
-	cd /home/seungcoh/바탕화면/temp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/seungcoh/바탕화면/temp /home/seungcoh/바탕화면/temp /home/seungcoh/바탕화면/temp/build /home/seungcoh/바탕화면/temp/build /home/seungcoh/바탕화면/temp/build/CMakeFiles/NightlyMemoryCheck.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/seungcoh/바탕화면/doing/temp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/seungcoh/바탕화면/doing/temp /home/seungcoh/바탕화면/doing/temp /home/seungcoh/바탕화면/doing/temp/build /home/seungcoh/바탕화면/doing/temp/build /home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/NightlyMemoryCheck.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/NightlyMemoryCheck.dir/depend
 

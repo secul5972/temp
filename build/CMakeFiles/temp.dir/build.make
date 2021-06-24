@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/seungcoh/바탕화면/temp
+CMAKE_SOURCE_DIR = /home/seungcoh/바탕화면/doing/temp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/seungcoh/바탕화면/temp/build
+CMAKE_BINARY_DIR = /home/seungcoh/바탕화면/doing/temp/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/temp.dir/depend.make
@@ -59,81 +59,94 @@ include CMakeFiles/temp.dir/flags.make
 
 CMakeFiles/temp.dir/check.c.o: CMakeFiles/temp.dir/flags.make
 CMakeFiles/temp.dir/check.c.o: ../check.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/temp.dir/check.c.o"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/check.c.o   -c /home/seungcoh/바탕화면/temp/check.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/temp.dir/check.c.o"
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/check.c.o   -c /home/seungcoh/바탕화면/doing/temp/check.c
 
 CMakeFiles/temp.dir/check.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/temp.dir/check.c.i"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/temp/check.c > CMakeFiles/temp.dir/check.c.i
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/doing/temp/check.c > CMakeFiles/temp.dir/check.c.i
 
 CMakeFiles/temp.dir/check.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/temp.dir/check.c.s"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/temp/check.c -o CMakeFiles/temp.dir/check.c.s
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/doing/temp/check.c -o CMakeFiles/temp.dir/check.c.s
 
 CMakeFiles/temp.dir/ft_printf.c.o: CMakeFiles/temp.dir/flags.make
 CMakeFiles/temp.dir/ft_printf.c.o: ../ft_printf.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/temp.dir/ft_printf.c.o"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/ft_printf.c.o   -c /home/seungcoh/바탕화면/temp/ft_printf.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/temp.dir/ft_printf.c.o"
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/ft_printf.c.o   -c /home/seungcoh/바탕화면/doing/temp/ft_printf.c
 
 CMakeFiles/temp.dir/ft_printf.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/temp.dir/ft_printf.c.i"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/temp/ft_printf.c > CMakeFiles/temp.dir/ft_printf.c.i
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/doing/temp/ft_printf.c > CMakeFiles/temp.dir/ft_printf.c.i
 
 CMakeFiles/temp.dir/ft_printf.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/temp.dir/ft_printf.c.s"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/temp/ft_printf.c -o CMakeFiles/temp.dir/ft_printf.c.s
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/doing/temp/ft_printf.c -o CMakeFiles/temp.dir/ft_printf.c.s
 
 CMakeFiles/temp.dir/ft_printf_utils.c.o: CMakeFiles/temp.dir/flags.make
 CMakeFiles/temp.dir/ft_printf_utils.c.o: ../ft_printf_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/temp.dir/ft_printf_utils.c.o"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/ft_printf_utils.c.o   -c /home/seungcoh/바탕화면/temp/ft_printf_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/temp.dir/ft_printf_utils.c.o"
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/ft_printf_utils.c.o   -c /home/seungcoh/바탕화면/doing/temp/ft_printf_utils.c
 
 CMakeFiles/temp.dir/ft_printf_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/temp.dir/ft_printf_utils.c.i"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/temp/ft_printf_utils.c > CMakeFiles/temp.dir/ft_printf_utils.c.i
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/doing/temp/ft_printf_utils.c > CMakeFiles/temp.dir/ft_printf_utils.c.i
 
 CMakeFiles/temp.dir/ft_printf_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/temp.dir/ft_printf_utils.c.s"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/temp/ft_printf_utils.c -o CMakeFiles/temp.dir/ft_printf_utils.c.s
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/doing/temp/ft_printf_utils.c -o CMakeFiles/temp.dir/ft_printf_utils.c.s
 
 CMakeFiles/temp.dir/ft_printf_utils2.c.o: CMakeFiles/temp.dir/flags.make
 CMakeFiles/temp.dir/ft_printf_utils2.c.o: ../ft_printf_utils2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/temp.dir/ft_printf_utils2.c.o"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/ft_printf_utils2.c.o   -c /home/seungcoh/바탕화면/temp/ft_printf_utils2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/temp.dir/ft_printf_utils2.c.o"
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/ft_printf_utils2.c.o   -c /home/seungcoh/바탕화면/doing/temp/ft_printf_utils2.c
 
 CMakeFiles/temp.dir/ft_printf_utils2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/temp.dir/ft_printf_utils2.c.i"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/temp/ft_printf_utils2.c > CMakeFiles/temp.dir/ft_printf_utils2.c.i
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/doing/temp/ft_printf_utils2.c > CMakeFiles/temp.dir/ft_printf_utils2.c.i
 
 CMakeFiles/temp.dir/ft_printf_utils2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/temp.dir/ft_printf_utils2.c.s"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/temp/ft_printf_utils2.c -o CMakeFiles/temp.dir/ft_printf_utils2.c.s
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/doing/temp/ft_printf_utils2.c -o CMakeFiles/temp.dir/ft_printf_utils2.c.s
 
 CMakeFiles/temp.dir/main.c.o: CMakeFiles/temp.dir/flags.make
 CMakeFiles/temp.dir/main.c.o: ../main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/temp.dir/main.c.o"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/main.c.o   -c /home/seungcoh/바탕화면/temp/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/temp.dir/main.c.o"
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/main.c.o   -c /home/seungcoh/바탕화면/doing/temp/main.c
 
 CMakeFiles/temp.dir/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/temp.dir/main.c.i"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/temp/main.c > CMakeFiles/temp.dir/main.c.i
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/doing/temp/main.c > CMakeFiles/temp.dir/main.c.i
 
 CMakeFiles/temp.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/temp.dir/main.c.s"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/temp/main.c -o CMakeFiles/temp.dir/main.c.s
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/doing/temp/main.c -o CMakeFiles/temp.dir/main.c.s
 
 CMakeFiles/temp.dir/print.c.o: CMakeFiles/temp.dir/flags.make
 CMakeFiles/temp.dir/print.c.o: ../print.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/temp.dir/print.c.o"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/print.c.o   -c /home/seungcoh/바탕화면/temp/print.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/temp.dir/print.c.o"
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/print.c.o   -c /home/seungcoh/바탕화면/doing/temp/print.c
 
 CMakeFiles/temp.dir/print.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/temp.dir/print.c.i"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/temp/print.c > CMakeFiles/temp.dir/print.c.i
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/doing/temp/print.c > CMakeFiles/temp.dir/print.c.i
 
 CMakeFiles/temp.dir/print.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/temp.dir/print.c.s"
-	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/temp/print.c -o CMakeFiles/temp.dir/print.c.s
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/doing/temp/print.c -o CMakeFiles/temp.dir/print.c.s
+
+CMakeFiles/temp.dir/print2.c.o: CMakeFiles/temp.dir/flags.make
+CMakeFiles/temp.dir/print2.c.o: ../print2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/temp.dir/print2.c.o"
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/temp.dir/print2.c.o   -c /home/seungcoh/바탕화면/doing/temp/print2.c
+
+CMakeFiles/temp.dir/print2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/temp.dir/print2.c.i"
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/seungcoh/바탕화면/doing/temp/print2.c > CMakeFiles/temp.dir/print2.c.i
+
+CMakeFiles/temp.dir/print2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/temp.dir/print2.c.s"
+	/bin/x86_64-linux-gnu-gcc-9 $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/seungcoh/바탕화면/doing/temp/print2.c -o CMakeFiles/temp.dir/print2.c.s
 
 # Object files for target temp
 temp_OBJECTS = \
@@ -142,7 +155,8 @@ temp_OBJECTS = \
 "CMakeFiles/temp.dir/ft_printf_utils.c.o" \
 "CMakeFiles/temp.dir/ft_printf_utils2.c.o" \
 "CMakeFiles/temp.dir/main.c.o" \
-"CMakeFiles/temp.dir/print.c.o"
+"CMakeFiles/temp.dir/print.c.o" \
+"CMakeFiles/temp.dir/print2.c.o"
 
 # External object files for target temp
 temp_EXTERNAL_OBJECTS =
@@ -153,9 +167,10 @@ temp: CMakeFiles/temp.dir/ft_printf_utils.c.o
 temp: CMakeFiles/temp.dir/ft_printf_utils2.c.o
 temp: CMakeFiles/temp.dir/main.c.o
 temp: CMakeFiles/temp.dir/print.c.o
+temp: CMakeFiles/temp.dir/print2.c.o
 temp: CMakeFiles/temp.dir/build.make
 temp: CMakeFiles/temp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/seungcoh/바탕화면/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable temp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable temp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/temp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -168,6 +183,6 @@ CMakeFiles/temp.dir/clean:
 .PHONY : CMakeFiles/temp.dir/clean
 
 CMakeFiles/temp.dir/depend:
-	cd /home/seungcoh/바탕화면/temp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/seungcoh/바탕화면/temp /home/seungcoh/바탕화면/temp /home/seungcoh/바탕화면/temp/build /home/seungcoh/바탕화면/temp/build /home/seungcoh/바탕화면/temp/build/CMakeFiles/temp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/seungcoh/바탕화면/doing/temp/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/seungcoh/바탕화면/doing/temp /home/seungcoh/바탕화면/doing/temp /home/seungcoh/바탕화면/doing/temp/build /home/seungcoh/바탕화면/doing/temp/build /home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/temp.dir/depend
 

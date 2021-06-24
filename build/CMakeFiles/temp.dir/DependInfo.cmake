@@ -4,12 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/seungcoh/바탕화면/temp/check.c" "/home/seungcoh/바탕화면/temp/build/CMakeFiles/temp.dir/check.c.o"
-  "/home/seungcoh/바탕화면/temp/ft_printf.c" "/home/seungcoh/바탕화면/temp/build/CMakeFiles/temp.dir/ft_printf.c.o"
-  "/home/seungcoh/바탕화면/temp/ft_printf_utils.c" "/home/seungcoh/바탕화면/temp/build/CMakeFiles/temp.dir/ft_printf_utils.c.o"
-  "/home/seungcoh/바탕화면/temp/ft_printf_utils2.c" "/home/seungcoh/바탕화면/temp/build/CMakeFiles/temp.dir/ft_printf_utils2.c.o"
-  "/home/seungcoh/바탕화면/temp/main.c" "/home/seungcoh/바탕화면/temp/build/CMakeFiles/temp.dir/main.c.o"
-  "/home/seungcoh/바탕화면/temp/print.c" "/home/seungcoh/바탕화면/temp/build/CMakeFiles/temp.dir/print.c.o"
+  "/home/seungcoh/바탕화면/doing/temp/check.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/check.c.o"
+  "/home/seungcoh/바탕화면/doing/temp/ft_printf.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/ft_printf.c.o"
+  "/home/seungcoh/바탕화면/doing/temp/ft_printf_utils.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/ft_printf_utils.c.o"
+  "/home/seungcoh/바탕화면/doing/temp/ft_printf_utils2.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/ft_printf_utils2.c.o"
+  "/home/seungcoh/바탕화면/doing/temp/main.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/main.c.o"
+  "/home/seungcoh/바탕화면/doing/temp/print.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/print.c.o"
+  "/home/seungcoh/바탕화면/doing/temp/print2.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/print2.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

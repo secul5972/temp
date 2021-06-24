@@ -83,7 +83,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/seungcoh/바탕화면/temp/build"
+			"value" : "/home/seungcoh/바탕화면/doing/temp/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -623,7 +623,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/seungcoh/바탕화면/temp"
+			"value" : "/home/seungcoh/바탕화면/doing/temp"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1687,7 +1687,7 @@
 				}
 			],
 			"type" : "STRING",
-			"value" : "seungcoh-ZenBook-UX425EA-UX425EA"
+			"value" : "seungcoh-All-Series"
 		},
 		{
 			"name" : "SLURM_SBATCH_COMMAND",
@@ -1738,7 +1738,7 @@
 			"value" : "SVNCOMMAND-NOTFOUND"
 		},
 		{
-			"name" : "d_BINARY_DIR",
+			"name" : "c_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1747,10 +1747,10 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/seungcoh/바탕화면/temp/build"
+			"value" : "/home/seungcoh/바탕화면/doing/temp/build"
 		},
 		{
-			"name" : "d_SOURCE_DIR",
+			"name" : "c_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1759,7 +1759,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/seungcoh/바탕화면/temp"
+			"value" : "/home/seungcoh/바탕화면/doing/temp"
 		},
 		{
 			"name" : "temp_BINARY_DIR",
@@ -1771,7 +1771,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/seungcoh/바탕화면/temp/build"
+			"value" : "/home/seungcoh/바탕화면/doing/temp/build"
 		},
 		{
 			"name" : "temp_SOURCE_DIR",
@@ -1783,7 +1783,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/seungcoh/바탕화면/temp"
+			"value" : "/home/seungcoh/바탕화면/doing/temp"
 		}
 	],
 	"kind" : "cache",

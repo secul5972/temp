@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/seungcoh/바탕화면/temp
+CMAKE_SOURCE_DIR = /home/seungcoh/바탕화면/doing/temp
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/seungcoh/바탕화면/temp/build
+CMAKE_BINARY_DIR = /home/seungcoh/바탕화면/doing/temp/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -70,7 +70,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/seungcoh/바탕화면/temp/build/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/seungcoh/바탕화면/doing/temp/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -102,9 +102,9 @@ package/fast: package
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/seungcoh/바탕화면/temp/build/CMakeFiles /home/seungcoh/바탕화면/temp/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/seungcoh/바탕화면/doing/temp/build/CMakeFiles /home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/seungcoh/바탕화면/temp/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/seungcoh/바탕화면/doing/temp/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -307,6 +307,33 @@ print.c.s:
 	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/print.c.s
 .PHONY : print.c.s
 
+print2.o: print2.c.o
+
+.PHONY : print2.o
+
+# target to build an object file
+print2.c.o:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/print2.c.o
+.PHONY : print2.c.o
+
+print2.i: print2.c.i
+
+.PHONY : print2.i
+
+# target to preprocess a source file
+print2.c.i:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/print2.c.i
+.PHONY : print2.c.i
+
+print2.s: print2.c.s
+
+.PHONY : print2.s
+
+# target to generate assembly for a file
+print2.c.s:
+	$(MAKE) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/print2.c.s
+.PHONY : print2.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -336,6 +363,9 @@ help:
 	@echo "... print.o"
 	@echo "... print.i"
 	@echo "... print.s"
+	@echo "... print2.o"
+	@echo "... print2.i"
+	@echo "... print2.s"
 .PHONY : help
 
 

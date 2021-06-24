@@ -1,32 +1,37 @@
 [
 {
-  "directory": "/home/seungcoh/바탕화면/temp/build",
-  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/check.c.o   -c /home/seungcoh/바탕화면/temp/check.c",
-  "file": "/home/seungcoh/바탕화면/temp/check.c"
+  "directory": "/home/seungcoh/바탕화면/doing/temp/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/check.c.o   -c /home/seungcoh/바탕화면/doing/temp/check.c",
+  "file": "/home/seungcoh/바탕화면/doing/temp/check.c"
 },
 {
-  "directory": "/home/seungcoh/바탕화면/temp/build",
-  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/ft_printf.c.o   -c /home/seungcoh/바탕화면/temp/ft_printf.c",
-  "file": "/home/seungcoh/바탕화면/temp/ft_printf.c"
+  "directory": "/home/seungcoh/바탕화면/doing/temp/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/ft_printf.c.o   -c /home/seungcoh/바탕화면/doing/temp/ft_printf.c",
+  "file": "/home/seungcoh/바탕화면/doing/temp/ft_printf.c"
 },
 {
-  "directory": "/home/seungcoh/바탕화면/temp/build",
-  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/ft_printf_utils.c.o   -c /home/seungcoh/바탕화면/temp/ft_printf_utils.c",
-  "file": "/home/seungcoh/바탕화면/temp/ft_printf_utils.c"
+  "directory": "/home/seungcoh/바탕화면/doing/temp/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/ft_printf_utils.c.o   -c /home/seungcoh/바탕화면/doing/temp/ft_printf_utils.c",
+  "file": "/home/seungcoh/바탕화면/doing/temp/ft_printf_utils.c"
 },
 {
-  "directory": "/home/seungcoh/바탕화면/temp/build",
-  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/ft_printf_utils2.c.o   -c /home/seungcoh/바탕화면/temp/ft_printf_utils2.c",
-  "file": "/home/seungcoh/바탕화면/temp/ft_printf_utils2.c"
+  "directory": "/home/seungcoh/바탕화면/doing/temp/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/ft_printf_utils2.c.o   -c /home/seungcoh/바탕화면/doing/temp/ft_printf_utils2.c",
+  "file": "/home/seungcoh/바탕화면/doing/temp/ft_printf_utils2.c"
 },
 {
-  "directory": "/home/seungcoh/바탕화면/temp/build",
-  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/main.c.o   -c /home/seungcoh/바탕화면/temp/main.c",
-  "file": "/home/seungcoh/바탕화면/temp/main.c"
+  "directory": "/home/seungcoh/바탕화면/doing/temp/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/main.c.o   -c /home/seungcoh/바탕화면/doing/temp/main.c",
+  "file": "/home/seungcoh/바탕화면/doing/temp/main.c"
 },
 {
-  "directory": "/home/seungcoh/바탕화면/temp/build",
-  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/print.c.o   -c /home/seungcoh/바탕화면/temp/print.c",
-  "file": "/home/seungcoh/바탕화면/temp/print.c"
+  "directory": "/home/seungcoh/바탕화면/doing/temp/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/print.c.o   -c /home/seungcoh/바탕화면/doing/temp/print.c",
+  "file": "/home/seungcoh/바탕화면/doing/temp/print.c"
+},
+{
+  "directory": "/home/seungcoh/바탕화면/doing/temp/build",
+  "command": "/bin/x86_64-linux-gnu-gcc-9   -g   -o CMakeFiles/temp.dir/print2.c.o   -c /home/seungcoh/바탕화면/doing/temp/print2.c",
+  "file": "/home/seungcoh/바탕화면/doing/temp/print2.c"
 }
 ]

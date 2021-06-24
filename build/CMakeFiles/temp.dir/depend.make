@@ -19,3 +19,6 @@ CMakeFiles/temp.dir/main.c.o: ../main.c
 CMakeFiles/temp.dir/print.c.o: ../ft_printf.h
 CMakeFiles/temp.dir/print.c.o: ../print.c
 
+CMakeFiles/temp.dir/print2.c.o: ../ft_printf.h
+CMakeFiles/temp.dir/print2.c.o: ../print2.c
+

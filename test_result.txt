@@ -3203,3 +3203,4 @@ Binary files ft.txt and printf.txt differ
 0a1
 >  --- Return : 0
 
+#####42TESTS-PRINTF#####

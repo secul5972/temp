@@ -1,4 +1,4 @@
-# Install script for directory: /home/seungcoh/바탕화면/temp
+# Install script for directory: /home/seungcoh/바탕화면/doing/temp
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/seungcoh/바탕화면/temp/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/seungcoh/바탕화면/doing/temp/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

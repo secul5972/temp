@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 12:15:48 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 17:37:16 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/25 03:48:43 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	check_precision(const char **format, va_list ap, t_cond *stat)
 		val *= 10;
 		val += *(*format)++ - '0';
 	}
-	stat->prec = (val >= 0) ? val : -1;
+	stat->prec = (val >= 0) ? val : 2147483648;
 }
 
 char	*check_specifier(const char **format, va_list ap, t_cond *stat)

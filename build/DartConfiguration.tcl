@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/seungcoh/바탕화면/temp
-BuildDirectory: /home/seungcoh/바탕화면/temp/build
+SourceDirectory: /home/seungcoh/바탕화면/doing/temp
+BuildDirectory: /home/seungcoh/바탕화면/doing/temp/build
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: seungcoh-ZenBook-UX425EA-UX425EA
+Site: seungcoh-All-Series
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-x86_64-linux-gnu-g++-9
@@ -26,7 +26,7 @@ SubmitURL: http://
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/seungcoh/바탕화면/temp"
+ConfigureCommand: "/usr/bin/cmake" "/home/seungcoh/바탕화면/doing/temp"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
