@@ -6,13 +6,13 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:17:22 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 17:24:47 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/24 17:38:57 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*print_cpercent(va_list ap, t_cond *stat, int c_flag)
+char	*print_cpe(va_list ap, t_cond *stat, int c_flag)
 {
 	char	c;
 	char	width_c;
@@ -55,7 +55,7 @@ char	*print_s(va_list ap, t_cond *stat)
 		ret[idx.i++] = *(s++);
 	while (idx.i < idx.width)
 		ret[idx.i++] = ' ';
-	ret[idx.prec] = 0;
+	ret[idx.i] = 0;
 	if (!s)
 		free(s);
 	return (ret);

@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 11:38:13 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 17:19:35 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/24 17:37:35 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void			check_flag(const char **format, t_cond *stat);
 void			check_width(const char **format, va_list ap, t_cond *stat);
 void			check_precision(const char **format, va_list ap, t_cond *stat);
 char			*check_specifier(const char **format, va_list ap, t_cond *stat);
-char			*print_cpercent(va_list ap, t_cond *stat, int c_flag);
+char			*print_cpe(va_list ap, t_cond *stat, int c_flag);
 char			*print_s(va_list ap, t_cond *stat);
 char			*get_c_arr(va_list ap, t_cond *stat);
 char			*print_diuxp(va_list ap, t_cond *stat);

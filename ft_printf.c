@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 11:37:42 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 17:11:06 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/24 17:32:15 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,6 @@ void	init(t_cond *stat)
 
 char	*check_ap(const char **format, va_list ap, t_cond *stat)
 {
-	char *ret;
-
-	ret = 0;
 	(*format)++;
 	check_flag(format, stat);
 	check_width(format, ap, stat);
