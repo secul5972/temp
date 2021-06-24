@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 11:37:42 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 14:39:06 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/24 17:11:06 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,15 +26,8 @@ char	*check_ap(const char **format, va_list ap, t_cond *stat)
 {
 	char *ret;
 
+	ret = 0;
 	(*format)++;
-	if (**format == '%')
-	{
-		ret = malloc(sizeof(char) * 2);
-		ret[0] = '%';
-		ret[1] = 0;
-		(*format)++;
-		return (ret);
-	}
 	check_flag(format, stat);
 	check_width(format, ap, stat);
 	check_precision(format, ap, stat);
@@ -54,9 +47,11 @@ int		print_format(const char **format, va_list ap)
 		if (**format == '%')
 		{
 			init(&stat);
-			prt = check_ap(format, ap, &stat);
-			write(1, prt, (len = ft_strlen(prt)));
-			ret += len;
+			if((prt = check_ap(format, ap, &stat)))
+			{
+				write(1, prt, (len = ft_strlen(prt)));
+				ret += len;
+			}
 			free(prt);
 		}
 		else

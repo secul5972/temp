@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 12:15:48 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 14:34:49 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/24 17:11:47 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,9 @@ char	*check_specifier(const char **format, va_list ap, t_cond *stat)
 	char	*ret;
 
 	ret = 0;
-	if (**format == 'c')
-		ret = print_c(ap, stat);
+	
+	if (**format == 'c' || **format == '%')
+		ret = print_cpercent(ap, stat, 'c' - **format);
 	else if (**format == 's')
 		ret = print_s(ap, stat);
 	else if (**format == 'd' || **format == 'i' || **format == 'u' \
@@ -94,6 +95,8 @@ char	*check_specifier(const char **format, va_list ap, t_cond *stat)
 		stat->hex_flag = 2;
 		ret = print_diuxp(ap, stat);
 	}
+	else
+		return (ret);
 	(*format)++;
 	return (ret);
 }

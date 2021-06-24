@@ -9,7 +9,7 @@ int main(){
     int *t = &num;
 	int n = 30;
 
-	printf("[%c]sdfsdf[%3.4s]dfdfsdf\n",c,s);
+	/*printf("[%c]sdfsdf[%3.4s]dfdfsdf\n",c,s);
 	ft_printf("[%c]sdfsdf[%3.4s]dfdfsdf\n",c,s);
 	printf("[%c]sdfsdf[%6.4s]dfdfsdf\n",c,s);
 	ft_printf("[%c]sdfsdf[%6.4s]dfdfsdf\n",c,s);
@@ -86,5 +86,8 @@ int main(){
     ft_printf("8 >%.4p<\n", t);	//warning
     ft_printf("9 >%.1p<\n", t);	//warning
     ft_printf("A >%.p<\n", t);
-	
+	*/
+	printf("this %.3s is %.5stt\n", "hello", "");
+	//ft_printf("this %s is %stt\n", "hee", "bee");
+	ft_printf("%5s\n%stt\n", "hee", "bee");
 }

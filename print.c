@@ -6,26 +6,28 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:17:22 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 16:21:11 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/24 17:24:47 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*print_c(va_list ap, t_cond *stat)
+char	*print_cpercent(va_list ap, t_cond *stat, int c_flag)
 {
 	char	c;
+	char	width_c;
 	char	*ret;
 	t_idx	idx;
 
 	idx.i = 0;
 	idx.width = ft_max(stat->width, 1);
 	idx.offset = (stat->flag & (1 << 1)) ? 0 : idx.width - 1;
-	c = va_arg(ap, int);
+	c = c_flag > 0 ? '%' : va_arg(ap, int);
 	if (!(ret = (char *)malloc(sizeof(char) * (idx.width + 1))))
 		return (0);
+	width_c = (stat->flag & (1 << 0)) ? '0' : ' ';
 	while (idx.i < idx.offset)
-		ret[idx.i++] = ' ';
+		ret[idx.i++] = width_c;
 	ret[idx.i++] = c;
 	while (idx.i < idx.width)
 		ret[idx.i++] = ' ';
