@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:17:22 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 19:27:12 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/24 19:58:14 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ char	*print_diuxp(va_list ap, t_cond *stat)
 	char	width_c;
 	t_idx	idx;
 
+	if (stat->prec == 2147483648)
+		stat->prec = -1;
 	if (!(ch_d = get_c_arr(ap, stat)))
 		return (0);
 	idx.len = ft_strlen(ch_d);
