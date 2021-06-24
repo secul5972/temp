@@ -87,7 +87,7 @@ int main(){
     ft_printf("9 >%.1p<\n", t);	//warning
     ft_printf("A >%.p<\n", t);
 	*/
-	printf("this %.3s is %.5stt\n", "hello", "");
-	//ft_printf("this %s is %stt\n", "hee", "bee");
-	ft_printf("%5s\n%stt\n", "hee", "bee");
+	int a = 0;
+	printf("%0.d\n", a);
+	ft_printf("%0.d\n", a);
 }

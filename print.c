@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:17:22 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 17:38:57 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/24 19:27:12 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,15 +63,20 @@ char	*print_s(va_list ap, t_cond *stat)
 
 char	*get_c_arr(va_list ap, t_cond *stat)
 {
+	char *ret;
+
+	ret = 0;
 	if (stat->spec == 'd' || stat->spec == 'i')
-		return (ft_ntoa(va_arg(ap, int), 10, stat));
+		ret = ft_ntoa(va_arg(ap, int), 10, stat);
 	else if (stat->spec == 'u')
-		return (ft_ntoa(va_arg(ap, unsigned int), 10, stat));
+		ret = ft_ntoa(va_arg(ap, unsigned int), 10, stat);
 	else if (stat->spec == 'x' || stat->spec == 'X')
-		return (ft_ntoa(va_arg(ap, unsigned int), 16, stat));
+		ret = ft_ntoa(va_arg(ap, unsigned int), 16, stat);
 	else if (stat->spec == 'p')
-		return (ft_ntoa(va_arg(ap, long long), 16, stat));
-	return (0);
+		ret = ft_ntoa(va_arg(ap, long long), 16, stat);
+	if (ret[0] == '0' && ret[1] == 0 && stat->flag == 1)
+		ret[0] = 0;
+	return (ret);
 }
 
 void	fill_prec(char **ret, int *i, int len, char **ch_d)
@@ -94,8 +99,6 @@ char	*print_diuxp(va_list ap, t_cond *stat)
 	char	width_c;
 	t_idx	idx;
 
-	if (stat->prec == 2147483648)
-		stat->prec = -1;
 	if (!(ch_d = get_c_arr(ap, stat)))
 		return (0);
 	idx.len = ft_strlen(ch_d);
