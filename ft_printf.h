@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 11:38:13 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 17:37:35 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/25 19:23:25 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,10 @@ typedef struct	s_cond
 	int			m_flag;
 	int			hex_flag;
 	int			flag;
+	int			n_flag;
 	long		width;
 	long		prec;
 	char		spec;
-
 }				t_cond;
 
 typedef struct	s_idx

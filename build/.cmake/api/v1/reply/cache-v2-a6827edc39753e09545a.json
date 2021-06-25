@@ -1658,7 +1658,7 @@
 			"value" : "c10r7s6.42seoul.kr"
 		},
 		{
-			"name" : "n_BINARY_DIR",
+			"name" : "s_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1670,7 +1670,7 @@
 			"value" : "/Users/seungcoh/doing/temp/build"
 		},
 		{
-			"name" : "n_SOURCE_DIR",
+			"name" : "s_SOURCE_DIR",
 			"properties" : 
 			[
 				{

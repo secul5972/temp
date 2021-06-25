@@ -316,10 +316,10 @@ MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
 SITE:STRING=c10r7s6.42seoul.kr
 
 //Value Computed by CMake
-n_BINARY_DIR:STATIC=/Users/seungcoh/doing/temp/build
+s_BINARY_DIR:STATIC=/Users/seungcoh/doing/temp/build
 
 //Value Computed by CMake
-n_SOURCE_DIR:STATIC=/Users/seungcoh/doing/temp
+s_SOURCE_DIR:STATIC=/Users/seungcoh/doing/temp
 
 //Value Computed by CMake
 temp_BINARY_DIR:STATIC=/Users/seungcoh/doing/temp/build

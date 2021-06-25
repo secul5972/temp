@@ -45,6 +45,7 @@ cd $REAL_PATH
 make re
 echo "" > test_result.txt
 
+rm -rf tests451 42TESTERS-PRINTF pft pft_2019 printf_lover_v2 ft_printf_test Test-42 printf-tester
 # ########## PRINTF_TESTER
 # (이 테스트는 프로젝트 폴더 내 다른 불필요한 파일이 없어야 컴파일이 됨. 타 테스트 폴더/파일 다 삭제해야 함)
 git clone https://github.com/Kwevan/PRINTF_TESTER tests451
@@ -52,7 +53,11 @@ cd tests451
 echo 'testing...'
 echo -ne '1\n1\n1\n1\n1\n1\n1\n' | bash run.sh >> ../test_result.txt
 cd ..
-
+SECONDS=0;
+while sleep .5 && ((SECONDS <= 5)); do
+    printf '\r%s: %2d' "Testing will start soon" "$((5-SECONDS))"
+done
+printf '\n'
 
 # ########## 42TESTERS-PRINTF ##########
 echo -e '######### 42TESTERS-PRINTF ##########' >> test_result.txt
@@ -125,3 +130,5 @@ cd Test-42/test_printf_classic
 cp ../../libftprintf.a libftprintf.a
 make
 cd ../../
+rm -rf tests451 42TESTERS-PRINTF pft pft_2019 printf_lover_v2 ft_printf_test Test-42 printf-tester
+make fclean

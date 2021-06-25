@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 11:37:42 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 17:32:15 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/25 19:08:16 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ void	init(t_cond *stat)
 {
 	stat->m_flag = 0;
 	stat->hex_flag = 0;
+	stat->n_flag = 0;
 	stat->flag = 0;
 	stat->spec = 0;
 	stat->prec = 2147483648;
@@ -48,6 +49,8 @@ int		print_format(const char **format, va_list ap)
 			{
 				write(1, prt, (len = ft_strlen(prt)));
 				ret += len;
+				if (stat.n_flag)
+					ret++;
 			}
 			free(prt);
 		}
