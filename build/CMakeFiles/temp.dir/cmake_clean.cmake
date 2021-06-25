@@ -1,11 +1,18 @@
 file(REMOVE_RECURSE
   "CMakeFiles/temp.dir/check.c.o"
+  "CMakeFiles/temp.dir/check.c.o.d"
   "CMakeFiles/temp.dir/ft_printf.c.o"
+  "CMakeFiles/temp.dir/ft_printf.c.o.d"
   "CMakeFiles/temp.dir/ft_printf_utils.c.o"
+  "CMakeFiles/temp.dir/ft_printf_utils.c.o.d"
   "CMakeFiles/temp.dir/ft_printf_utils2.c.o"
+  "CMakeFiles/temp.dir/ft_printf_utils2.c.o.d"
   "CMakeFiles/temp.dir/main.c.o"
+  "CMakeFiles/temp.dir/main.c.o.d"
   "CMakeFiles/temp.dir/print.c.o"
+  "CMakeFiles/temp.dir/print.c.o.d"
   "CMakeFiles/temp.dir/print2.c.o"
+  "CMakeFiles/temp.dir/print2.c.o.d"
   "temp"
   "temp.pdb"
 )

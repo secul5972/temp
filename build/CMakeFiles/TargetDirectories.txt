@@ -1,5 +1,5 @@
-/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/edit_cache.dir
-/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/package_source.dir
-/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/rebuild_cache.dir
-/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/package.dir
-/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir
+/Users/seungcoh/doing/temp/build/CMakeFiles/rebuild_cache.dir
+/Users/seungcoh/doing/temp/build/CMakeFiles/edit_cache.dir
+/Users/seungcoh/doing/temp/build/CMakeFiles/package_source.dir
+/Users/seungcoh/doing/temp/build/CMakeFiles/package.dir
+/Users/seungcoh/doing/temp/build/CMakeFiles/temp.dir

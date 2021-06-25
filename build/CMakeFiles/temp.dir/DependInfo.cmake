@@ -1,21 +1,20 @@
+
+# Consider dependencies only in project.
+set(CMAKE_DEPENDS_IN_PROJECT_ONLY OFF)
+
 # The set of languages for which implicit dependencies are needed:
 set(CMAKE_DEPENDS_LANGUAGES
-  "C"
   )
-# The set of files for implicit dependencies of each language:
-set(CMAKE_DEPENDS_CHECK_C
-  "/home/seungcoh/바탕화면/doing/temp/check.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/check.c.o"
-  "/home/seungcoh/바탕화면/doing/temp/ft_printf.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/ft_printf.c.o"
-  "/home/seungcoh/바탕화면/doing/temp/ft_printf_utils.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/ft_printf_utils.c.o"
-  "/home/seungcoh/바탕화면/doing/temp/ft_printf_utils2.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/ft_printf_utils2.c.o"
-  "/home/seungcoh/바탕화면/doing/temp/main.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/main.c.o"
-  "/home/seungcoh/바탕화면/doing/temp/print.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/print.c.o"
-  "/home/seungcoh/바탕화면/doing/temp/print2.c" "/home/seungcoh/바탕화면/doing/temp/build/CMakeFiles/temp.dir/print2.c.o"
-  )
-set(CMAKE_C_COMPILER_ID "GNU")
 
-# The include file search paths:
-set(CMAKE_C_TARGET_INCLUDE_PATH
+# The set of dependency files which are needed:
+set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/Users/seungcoh/doing/temp/check.c" "CMakeFiles/temp.dir/check.c.o" "gcc" "CMakeFiles/temp.dir/check.c.o.d"
+  "/Users/seungcoh/doing/temp/ft_printf.c" "CMakeFiles/temp.dir/ft_printf.c.o" "gcc" "CMakeFiles/temp.dir/ft_printf.c.o.d"
+  "/Users/seungcoh/doing/temp/ft_printf_utils.c" "CMakeFiles/temp.dir/ft_printf_utils.c.o" "gcc" "CMakeFiles/temp.dir/ft_printf_utils.c.o.d"
+  "/Users/seungcoh/doing/temp/ft_printf_utils2.c" "CMakeFiles/temp.dir/ft_printf_utils2.c.o" "gcc" "CMakeFiles/temp.dir/ft_printf_utils2.c.o.d"
+  "/Users/seungcoh/doing/temp/main.c" "CMakeFiles/temp.dir/main.c.o" "gcc" "CMakeFiles/temp.dir/main.c.o.d"
+  "/Users/seungcoh/doing/temp/print.c" "CMakeFiles/temp.dir/print.c.o" "gcc" "CMakeFiles/temp.dir/print.c.o.d"
+  "/Users/seungcoh/doing/temp/print2.c" "CMakeFiles/temp.dir/print2.c.o" "gcc" "CMakeFiles/temp.dir/print2.c.o.d"
   )
 
 # Targets to which this target links.
