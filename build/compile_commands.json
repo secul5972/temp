@@ -26,7 +26,12 @@
 },
 {
   "directory": "/Users/seungcoh/doing/temp/build",
-  "command": "/usr/bin/clang   -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -o CMakeFiles/temp.dir/print.c.o -c /Users/seungcoh/doing/temp/print.c",
-  "file": "/Users/seungcoh/doing/temp/print.c"
+  "command": "/usr/bin/clang   -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -o CMakeFiles/temp.dir/print_cpes.c.o -c /Users/seungcoh/doing/temp/print_cpes.c",
+  "file": "/Users/seungcoh/doing/temp/print_cpes.c"
+},
+{
+  "directory": "/Users/seungcoh/doing/temp/build",
+  "command": "/usr/bin/clang   -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk -mmacosx-version-min=10.15 -o CMakeFiles/temp.dir/print_diuxp.c.o -c /Users/seungcoh/doing/temp/print_diuxp.c",
+  "file": "/Users/seungcoh/doing/temp/print_diuxp.c"
 }
 ]

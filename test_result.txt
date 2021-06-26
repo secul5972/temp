@@ -13,7 +13,7 @@ Please select: 1, 2, 3, or 4
 
 [ next (1) ]  |  [ show diff (2) ]  |  [ show printf results ] (3)  |  [ show ft_printf results ] (4)  |
 
-rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
+rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
 rm -f libftprintf.a
 ------------------------------
 |        number.c            |
@@ -23,9 +23,10 @@ rm -f libftprintf.a
 gcc -Wall -Wextra -Werror -c ft_printf.c -o ft_printf.o
 gcc -Wall -Wextra -Werror -c ft_printf_utils.c -o ft_printf_utils.o
 gcc -Wall -Wextra -Werror -c ft_printf_utils2.c -o ft_printf_utils2.o
-gcc -Wall -Wextra -Werror -c print.c -o print.o
+gcc -Wall -Wextra -Werror -c print_cpes.c -o print_cpes.o
+gcc -Wall -Wextra -Werror -c print_diuxp.c -o print_diuxp.o
 gcc -Wall -Wextra -Werror -c check.c -o check.o
-ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
+ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
 
 [1;32m[ OK ] - All GOOD
 [0m
@@ -34,7 +35,7 @@ Please select: 1, 2, 3, or 4
 
 [ next (1) ]  |  [ show diff (2) ]  |  [ show printf results ] (3)  |  [ show ft_printf results ] (4)  |
 
-rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
+rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
 rm -f libftprintf.a
 ------------------------------
 |        char.c              |
@@ -44,9 +45,10 @@ rm -f libftprintf.a
 gcc -Wall -Wextra -Werror -c ft_printf.c -o ft_printf.o
 gcc -Wall -Wextra -Werror -c ft_printf_utils.c -o ft_printf_utils.o
 gcc -Wall -Wextra -Werror -c ft_printf_utils2.c -o ft_printf_utils2.o
-gcc -Wall -Wextra -Werror -c print.c -o print.o
+gcc -Wall -Wextra -Werror -c print_cpes.c -o print_cpes.o
+gcc -Wall -Wextra -Werror -c print_diuxp.c -o print_diuxp.o
 gcc -Wall -Wextra -Werror -c check.c -o check.o
-ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
+ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
 
 [1;32m[ OK ] - All GOOD
 [0m
@@ -55,7 +57,7 @@ Please select: 1, 2, 3, or 4
 
 [ next (1) ]  |  [ show diff (2) ]  |  [ show printf results ] (3)  |  [ show ft_printf results ] (4)  |
 
-rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
+rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
 rm -f libftprintf.a
 ------------------------------
 |        unsigned_int.c      |
@@ -65,9 +67,10 @@ rm -f libftprintf.a
 gcc -Wall -Wextra -Werror -c ft_printf.c -o ft_printf.o
 gcc -Wall -Wextra -Werror -c ft_printf_utils.c -o ft_printf_utils.o
 gcc -Wall -Wextra -Werror -c ft_printf_utils2.c -o ft_printf_utils2.o
-gcc -Wall -Wextra -Werror -c print.c -o print.o
+gcc -Wall -Wextra -Werror -c print_cpes.c -o print_cpes.o
+gcc -Wall -Wextra -Werror -c print_diuxp.c -o print_diuxp.o
 gcc -Wall -Wextra -Werror -c check.c -o check.o
-ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
+ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
 
 [1;32m[ OK ] - All GOOD
 [0m
@@ -76,7 +79,7 @@ Please select: 1, 2, 3, or 4
 
 [ next (1) ]  |  [ show diff (2) ]  |  [ show printf results ] (3)  |  [ show ft_printf results ] (4)  |
 
-rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
+rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
 rm -f libftprintf.a
 ------------------------------
 |        hexa.c              |
@@ -86,9 +89,10 @@ rm -f libftprintf.a
 gcc -Wall -Wextra -Werror -c ft_printf.c -o ft_printf.o
 gcc -Wall -Wextra -Werror -c ft_printf_utils.c -o ft_printf_utils.o
 gcc -Wall -Wextra -Werror -c ft_printf_utils2.c -o ft_printf_utils2.o
-gcc -Wall -Wextra -Werror -c print.c -o print.o
+gcc -Wall -Wextra -Werror -c print_cpes.c -o print_cpes.o
+gcc -Wall -Wextra -Werror -c print_diuxp.c -o print_diuxp.o
 gcc -Wall -Wextra -Werror -c check.c -o check.o
-ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
+ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
 
 [1;32m[ OK ] - All GOOD
 [0m
@@ -97,7 +101,7 @@ Please select: 1, 2, 3, or 4
 
 [ next (1) ]  |  [ show diff (2) ]  |  [ show printf results ] (3)  |  [ show ft_printf results ] (4)  |
 
-rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
+rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
 rm -f libftprintf.a
 ------------------------------
 |        percent.c           |
@@ -107,9 +111,10 @@ rm -f libftprintf.a
 gcc -Wall -Wextra -Werror -c ft_printf.c -o ft_printf.o
 gcc -Wall -Wextra -Werror -c ft_printf_utils.c -o ft_printf_utils.o
 gcc -Wall -Wextra -Werror -c ft_printf_utils2.c -o ft_printf_utils2.o
-gcc -Wall -Wextra -Werror -c print.c -o print.o
+gcc -Wall -Wextra -Werror -c print_cpes.c -o print_cpes.o
+gcc -Wall -Wextra -Werror -c print_diuxp.c -o print_diuxp.o
 gcc -Wall -Wextra -Werror -c check.c -o check.o
-ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
+ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
 
 [1;32m[ OK ] - All GOOD
 [0m
@@ -118,7 +123,7 @@ Please select: 1, 2, 3, or 4
 
 [ next (1) ]  |  [ show diff (2) ]  |  [ show printf results ] (3)  |  [ show ft_printf results ] (4)  |
 
-rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
+rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
 rm -f libftprintf.a
 ------------------------------
 |        pointer.c           |
@@ -128,67 +133,68 @@ rm -f libftprintf.a
 gcc -Wall -Wextra -Werror -c ft_printf.c -o ft_printf.o
 gcc -Wall -Wextra -Werror -c ft_printf_utils.c -o ft_printf_utils.o
 gcc -Wall -Wextra -Werror -c ft_printf_utils2.c -o ft_printf_utils2.o
-gcc -Wall -Wextra -Werror -c print.c -o print.o
+gcc -Wall -Wextra -Werror -c print_cpes.c -o print_cpes.o
+gcc -Wall -Wextra -Werror -c print_diuxp.c -o print_diuxp.o
 gcc -Wall -Wextra -Werror -c check.c -o check.o
-ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
-1 [0x7ffee8823a40]18					      |	1 [0x7ffee38e1a40]18
-1.1 [0x7ffee8823a40]20					      |	1.1 [0x7ffee38e1a40]20
-3 ! [0x7ffee8823a40]20					      |	3 ! [0x7ffee38e1a40]20
-3.4 ![0x7ffee8823a40]21					      |	3.4 ![0x7ffee38e1a40]21
-5 [0x7ffee8823a40]18					      |	5 [0x7ffee38e1a40]18
-10 [0x7ffee8823a40                                            |	10 [0x7ffee38e1a40                                           
-10 [0x7ffee8823a40]19					      |	10 [0x7ffee38e1a40]19
-10 [0x7ffee8823a40]19					      |	10 [0x7ffee38e1a40]19
-10 [0x7ffee8823a40]19					      |	10 [0x7ffee38e1a40]19
-10 [0x7ffee8823a40]19					      |	10 [0x7ffee38e1a40]19
+ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
+1 [0x7ffee6529ab0]18					      |	1 [0x7ffedff6fab0]18
+1.1 [0x7ffee6529ab0]20					      |	1.1 [0x7ffedff6fab0]20
+3 ! [0x7ffee6529ab0]20					      |	3 ! [0x7ffedff6fab0]20
+3.4 ![0x7ffee6529ab0]21					      |	3.4 ![0x7ffedff6fab0]21
+5 [0x7ffee6529ab0]18					      |	5 [0x7ffedff6fab0]18
+10 [0x7ffee6529ab0                                            |	10 [0x7ffedff6fab0                                           
+10 [0x7ffee6529ab0]19					      |	10 [0x7ffedff6fab0]19
+10 [0x7ffee6529ab0]19					      |	10 [0x7ffedff6fab0]19
+10 [0x7ffee6529ab0]19					      |	10 [0x7ffedff6fab0]19
+10 [0x7ffee6529ab0]19					      |	10 [0x7ffedff6fab0]19
 10 [                                                          |	10 [                                                         
 10 [                                                          |	10 [                                                         
-1 [0x7ffee8823a44]18					      |	1 [0x7ffee38e1a44]18
-1.1 [0x7ffee8823a44]20					      |	1.1 [0x7ffee38e1a44]20
-3 ! [0x7ffee8823a44]20					      |	3 ! [0x7ffee38e1a44]20
-3.4 ![0x7ffee8823a44]21					      |	3.4 ![0x7ffee38e1a44]21
-5 [0x7ffee8823a44]18					      |	5 [0x7ffee38e1a44]18
-10 [0x7ffee8823a44                                            |	10 [0x7ffee38e1a44                                           
-10 [0x7ffee8823a44]19					      |	10 [0x7ffee38e1a44]19
-10 [0x7ffee8823a44]19					      |	10 [0x7ffee38e1a44]19
-10 [0x7ffee8823a44]19					      |	10 [0x7ffee38e1a44]19
-10 [0x7ffee8823a44]19					      |	10 [0x7ffee38e1a44]19
+1 [0x7ffee6529ab4]18					      |	1 [0x7ffedff6fab4]18
+1.1 [0x7ffee6529ab4]20					      |	1.1 [0x7ffedff6fab4]20
+3 ! [0x7ffee6529ab4]20					      |	3 ! [0x7ffedff6fab4]20
+3.4 ![0x7ffee6529ab4]21					      |	3.4 ![0x7ffedff6fab4]21
+5 [0x7ffee6529ab4]18					      |	5 [0x7ffedff6fab4]18
+10 [0x7ffee6529ab4                                            |	10 [0x7ffedff6fab4                                           
+10 [0x7ffee6529ab4]19					      |	10 [0x7ffedff6fab4]19
+10 [0x7ffee6529ab4]19					      |	10 [0x7ffedff6fab4]19
+10 [0x7ffee6529ab4]19					      |	10 [0x7ffedff6fab4]19
+10 [0x7ffee6529ab4]19					      |	10 [0x7ffedff6fab4]19
 10 [                                                          |	10 [                                                         
 10 [                                                          |	10 [                                                         
-1 [0x7ffee8823a48]18					      |	1 [0x7ffee38e1a48]18
-1.1 [0x7ffee8823a48]20					      |	1.1 [0x7ffee38e1a48]20
-3 ! [0x7ffee8823a48]20					      |	3 ! [0x7ffee38e1a48]20
-3.4 ![0x7ffee8823a48]21					      |	3.4 ![0x7ffee38e1a48]21
-5 [0x7ffee8823a48]18					      |	5 [0x7ffee38e1a48]18
-10 [0x7ffee8823a48                                            |	10 [0x7ffee38e1a48                                           
-10 [0x7ffee8823a48]19					      |	10 [0x7ffee38e1a48]19
-10 [0x7ffee8823a48]19					      |	10 [0x7ffee38e1a48]19
-10 [0x7ffee8823a48]19					      |	10 [0x7ffee38e1a48]19
-10 [0x7ffee8823a48]19					      |	10 [0x7ffee38e1a48]19
+1 [0x7ffee6529ab8]18					      |	1 [0x7ffedff6fab8]18
+1.1 [0x7ffee6529ab8]20					      |	1.1 [0x7ffedff6fab8]20
+3 ! [0x7ffee6529ab8]20					      |	3 ! [0x7ffedff6fab8]20
+3.4 ![0x7ffee6529ab8]21					      |	3.4 ![0x7ffedff6fab8]21
+5 [0x7ffee6529ab8]18					      |	5 [0x7ffedff6fab8]18
+10 [0x7ffee6529ab8                                            |	10 [0x7ffedff6fab8                                           
+10 [0x7ffee6529ab8]19					      |	10 [0x7ffedff6fab8]19
+10 [0x7ffee6529ab8]19					      |	10 [0x7ffedff6fab8]19
+10 [0x7ffee6529ab8]19					      |	10 [0x7ffedff6fab8]19
+10 [0x7ffee6529ab8]19					      |	10 [0x7ffedff6fab8]19
 10 [                                                          |	10 [                                                         
 10 [                                                          |	10 [                                                         
-1 [0x7ffee8823a4c]18					      |	1 [0x7ffee38e1a4c]18
-1.1 [0x7ffee8823a4c]20					      |	1.1 [0x7ffee38e1a4c]20
-3 ! [0x7ffee8823a4c]20					      |	3 ! [0x7ffee38e1a4c]20
-3.4 ![0x7ffee8823a4c]21					      |	3.4 ![0x7ffee38e1a4c]21
-5 [0x7ffee8823a4c]18					      |	5 [0x7ffee38e1a4c]18
-10 [0x7ffee8823a4c                                            |	10 [0x7ffee38e1a4c                                           
-10 [0x7ffee8823a4c]19					      |	10 [0x7ffee38e1a4c]19
-10 [0x7ffee8823a4c]19					      |	10 [0x7ffee38e1a4c]19
-10 [0x7ffee8823a4c]19					      |	10 [0x7ffee38e1a4c]19
-10 [0x7ffee8823a4c]19					      |	10 [0x7ffee38e1a4c]19
+1 [0x7ffee6529abc]18					      |	1 [0x7ffedff6fabc]18
+1.1 [0x7ffee6529abc]20					      |	1.1 [0x7ffedff6fabc]20
+3 ! [0x7ffee6529abc]20					      |	3 ! [0x7ffedff6fabc]20
+3.4 ![0x7ffee6529abc]21					      |	3.4 ![0x7ffedff6fabc]21
+5 [0x7ffee6529abc]18					      |	5 [0x7ffedff6fabc]18
+10 [0x7ffee6529abc                                            |	10 [0x7ffedff6fabc                                           
+10 [0x7ffee6529abc]19					      |	10 [0x7ffedff6fabc]19
+10 [0x7ffee6529abc]19					      |	10 [0x7ffedff6fabc]19
+10 [0x7ffee6529abc]19					      |	10 [0x7ffedff6fabc]19
+10 [0x7ffee6529abc]19					      |	10 [0x7ffedff6fabc]19
 10 [                                                          |	10 [                                                         
 10 [                                                          |	10 [                                                         
-1 [0x7ffee8823a50]18					      |	1 [0x7ffee38e1a50]18
-1.1 [0x7ffee8823a50]20					      |	1.1 [0x7ffee38e1a50]20
-3 ! [0x7ffee8823a50]20					      |	3 ! [0x7ffee38e1a50]20
-3.4 ![0x7ffee8823a50]21					      |	3.4 ![0x7ffee38e1a50]21
-5 [0x7ffee8823a50]18					      |	5 [0x7ffee38e1a50]18
-10 [0x7ffee8823a50                                            |	10 [0x7ffee38e1a50                                           
-10 [0x7ffee8823a50]19					      |	10 [0x7ffee38e1a50]19
-10 [0x7ffee8823a50]19					      |	10 [0x7ffee38e1a50]19
-10 [0x7ffee8823a50]19					      |	10 [0x7ffee38e1a50]19
-10 [0x7ffee8823a50]19					      |	10 [0x7ffee38e1a50]19
+1 [0x7ffee6529ac0]18					      |	1 [0x7ffedff6fac0]18
+1.1 [0x7ffee6529ac0]20					      |	1.1 [0x7ffedff6fac0]20
+3 ! [0x7ffee6529ac0]20					      |	3 ! [0x7ffedff6fac0]20
+3.4 ![0x7ffee6529ac0]21					      |	3.4 ![0x7ffedff6fac0]21
+5 [0x7ffee6529ac0]18					      |	5 [0x7ffedff6fac0]18
+10 [0x7ffee6529ac0                                            |	10 [0x7ffedff6fac0                                           
+10 [0x7ffee6529ac0]19					      |	10 [0x7ffedff6fac0]19
+10 [0x7ffee6529ac0]19					      |	10 [0x7ffedff6fac0]19
+10 [0x7ffee6529ac0]19					      |	10 [0x7ffedff6fac0]19
+10 [0x7ffee6529ac0]19					      |	10 [0x7ffedff6fac0]19
 10 [                                                          |	10 [                                                         
 10 [                                                          |	10 [                                                         
  							      |
@@ -205,7 +211,7 @@ Please select: 1, 2, 3, or 4
 
 [ next (1) ]  |  [ show diff (2) ]  |  [ show printf results ] (3)  |  [ show ft_printf results ] (4)  |
 
-rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print.o check.o
+rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
 rm -f libftprintf.a
 ######### 42TESTERS-PRINTF ##########
 #####42TESTS-PRINTF#####

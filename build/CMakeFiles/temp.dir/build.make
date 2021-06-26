@@ -139,19 +139,33 @@ CMakeFiles/temp.dir/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/temp.dir/main.c.s"
 	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/seungcoh/doing/temp/main.c -o CMakeFiles/temp.dir/main.c.s
 
-CMakeFiles/temp.dir/print.c.o: CMakeFiles/temp.dir/flags.make
-CMakeFiles/temp.dir/print.c.o: ../print.c
-CMakeFiles/temp.dir/print.c.o: CMakeFiles/temp.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/seungcoh/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/temp.dir/print.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/temp.dir/print.c.o -MF CMakeFiles/temp.dir/print.c.o.d -o CMakeFiles/temp.dir/print.c.o -c /Users/seungcoh/doing/temp/print.c
+CMakeFiles/temp.dir/print_cpes.c.o: CMakeFiles/temp.dir/flags.make
+CMakeFiles/temp.dir/print_cpes.c.o: ../print_cpes.c
+CMakeFiles/temp.dir/print_cpes.c.o: CMakeFiles/temp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/seungcoh/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/temp.dir/print_cpes.c.o"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/temp.dir/print_cpes.c.o -MF CMakeFiles/temp.dir/print_cpes.c.o.d -o CMakeFiles/temp.dir/print_cpes.c.o -c /Users/seungcoh/doing/temp/print_cpes.c
 
-CMakeFiles/temp.dir/print.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/temp.dir/print.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/seungcoh/doing/temp/print.c > CMakeFiles/temp.dir/print.c.i
+CMakeFiles/temp.dir/print_cpes.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/temp.dir/print_cpes.c.i"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/seungcoh/doing/temp/print_cpes.c > CMakeFiles/temp.dir/print_cpes.c.i
 
-CMakeFiles/temp.dir/print.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/temp.dir/print.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/seungcoh/doing/temp/print.c -o CMakeFiles/temp.dir/print.c.s
+CMakeFiles/temp.dir/print_cpes.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/temp.dir/print_cpes.c.s"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/seungcoh/doing/temp/print_cpes.c -o CMakeFiles/temp.dir/print_cpes.c.s
+
+CMakeFiles/temp.dir/print_diuxp.c.o: CMakeFiles/temp.dir/flags.make
+CMakeFiles/temp.dir/print_diuxp.c.o: ../print_diuxp.c
+CMakeFiles/temp.dir/print_diuxp.c.o: CMakeFiles/temp.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/seungcoh/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/temp.dir/print_diuxp.c.o"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/temp.dir/print_diuxp.c.o -MF CMakeFiles/temp.dir/print_diuxp.c.o.d -o CMakeFiles/temp.dir/print_diuxp.c.o -c /Users/seungcoh/doing/temp/print_diuxp.c
+
+CMakeFiles/temp.dir/print_diuxp.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/temp.dir/print_diuxp.c.i"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/seungcoh/doing/temp/print_diuxp.c > CMakeFiles/temp.dir/print_diuxp.c.i
+
+CMakeFiles/temp.dir/print_diuxp.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/temp.dir/print_diuxp.c.s"
+	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/seungcoh/doing/temp/print_diuxp.c -o CMakeFiles/temp.dir/print_diuxp.c.s
 
 # Object files for target temp
 temp_OBJECTS = \
@@ -160,7 +174,8 @@ temp_OBJECTS = \
 "CMakeFiles/temp.dir/ft_printf_utils.c.o" \
 "CMakeFiles/temp.dir/ft_printf_utils2.c.o" \
 "CMakeFiles/temp.dir/main.c.o" \
-"CMakeFiles/temp.dir/print.c.o"
+"CMakeFiles/temp.dir/print_cpes.c.o" \
+"CMakeFiles/temp.dir/print_diuxp.c.o"
 
 # External object files for target temp
 temp_EXTERNAL_OBJECTS =
@@ -170,10 +185,11 @@ temp: CMakeFiles/temp.dir/ft_printf.c.o
 temp: CMakeFiles/temp.dir/ft_printf_utils.c.o
 temp: CMakeFiles/temp.dir/ft_printf_utils2.c.o
 temp: CMakeFiles/temp.dir/main.c.o
-temp: CMakeFiles/temp.dir/print.c.o
+temp: CMakeFiles/temp.dir/print_cpes.c.o
+temp: CMakeFiles/temp.dir/print_diuxp.c.o
 temp: CMakeFiles/temp.dir/build.make
 temp: CMakeFiles/temp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/seungcoh/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking C executable temp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/seungcoh/doing/temp/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable temp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/temp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

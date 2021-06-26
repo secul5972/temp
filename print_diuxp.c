@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:17:22 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/26 16:44:00 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 19:24:12 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static char	*get_c_arr(va_list ap, t_cond *stat)
 	else if (stat->spec == 'x' || stat->spec == 'X')
 		ret = ft_ntoa(va_arg(ap, unsigned int), 16, stat);
 	else if (stat->spec == 'p')
-		ret = ft_ntoa(va_arg(ap, unsigned long long), 16, stat);
+		ret = ft_ptoa(va_arg(ap, unsigned long long), 16, stat);
 	if (ret[0] == '0' && ret[1] == 0 && stat->prec == 0)
 		ret[0] = 0;
 	if ((stat->h_flag == 2) && ret[2] == '0' && (stat->prec == 0))

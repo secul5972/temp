@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 11:38:13 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/26 16:45:59 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 19:18:06 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ char			*ft_strdup(const char *src);
 int				ft_max(const long a, const long b);
 int				ft_min(const long a, const long b);
 char			*ft_ntoa(long long n, int digit, t_cond *stat);
+char			*ft_ptoa(unsigned long long n, int digit, t_cond *stat);
 void			check_flag(const char **format, t_cond *stat);
 void			check_width(const char **format, va_list ap, t_cond *stat);
 void			check_precision(const char **format, va_list ap, t_cond *stat);

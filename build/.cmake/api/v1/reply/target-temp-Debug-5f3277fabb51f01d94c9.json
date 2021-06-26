@@ -46,7 +46,8 @@
 				3,
 				4,
 				5,
-				6
+				6,
+				7
 			]
 		}
 	],
@@ -84,7 +85,8 @@
 				3,
 				4,
 				5,
-				6
+				6,
+				7
 			]
 		},
 		{
@@ -135,7 +137,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "print.c",
+			"path" : "print_cpes.c",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "print_diuxp.c",
 			"sourceGroupIndex" : 0
 		}
 	],

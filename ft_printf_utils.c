@@ -6,13 +6,13 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 20:42:58 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/26 15:33:36 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 19:28:11 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_strlen(const char *str)
+int		ft_strlen(const char *str)
 {
 	int i;
 
@@ -40,14 +40,14 @@ char	*ft_strdup(const char *src)
 	return (ret);
 }
 
-int	ft_max(const long a, const long b)
+int		ft_max(const long a, const long b)
 {
 	if (a > b)
 		return (a);
 	return (b);
 }
 
-int	ft_min(const long a, const long b)
+int		ft_min(const long a, const long b)
 {
 	if (a < b)
 		return (a);
