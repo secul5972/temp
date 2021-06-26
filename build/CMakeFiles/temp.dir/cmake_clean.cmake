@@ -11,8 +11,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/temp.dir/main.c.o.d"
   "CMakeFiles/temp.dir/print.c.o"
   "CMakeFiles/temp.dir/print.c.o.d"
-  "CMakeFiles/temp.dir/print2.c.o"
-  "CMakeFiles/temp.dir/print2.c.o.d"
   "temp"
   "temp.pdb"
 )

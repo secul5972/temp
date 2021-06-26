@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 20:42:58 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/24 14:35:55 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 15:33:36 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,22 @@ int	ft_strlen(const char *str)
 	while (str[i])
 		i++;
 	return (i);
+}
+
+char	*ft_strdup(const char *src)
+{
+	char	*ret;
+	int		s_len;
+
+	s_len = ft_strlen(src);
+	if (!(ret = (char *)malloc(sizeof(char) * (s_len + 1))))
+		return (0);
+	while (s_len >= 0)
+	{
+		ret[s_len] = src[s_len];
+		s_len--;
+	}
+	return (ret);
 }
 
 int	ft_max(const long a, const long b)

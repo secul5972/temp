@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/23 13:57:25 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/25 19:48:17 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 14:33:04 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,10 @@ static	long	ft_abs(long long n, t_cond *stat)
 
 static	char	*fill_num(int size, long long temp, t_cond *stat, int digit)
 {
-	char	*ret;
-	int		val;
-	int		hex;
-	unsigned long long utemp;
+	char				*ret;
+	int					val;
+	int					hex;
+	unsigned long long	utemp;
 
 	hex = (stat->spec == 'p') ? 2 : 0;
 	utemp = temp;
@@ -32,7 +32,6 @@ static	char	*fill_num(int size, long long temp, t_cond *stat, int digit)
 		return (0);
 	ret[size-- + hex] = 0;
 	if (stat->spec == 'p')
-	{
 		while (size - stat->m_flag >= 0)
 		{
 			val = utemp % digit;
@@ -41,7 +40,6 @@ static	char	*fill_num(int size, long long temp, t_cond *stat, int digit)
 			ret[size-- + hex] = val;
 			utemp /= digit;
 		}
-	}
 	else {
 		while (size - stat->m_flag >= 0)
 		{
@@ -64,11 +62,11 @@ static	char	*fill_num(int size, long long temp, t_cond *stat, int digit)
 
 char			*ft_ntoa(long long n, int digit, t_cond *stat)
 {
-	int			size;
-	char		*ret;
-	long long	temp;
-	int			i;
-	unsigned long long utemp;
+	int					size;
+	char				*ret;
+	long long			temp;
+	int					i;
+	unsigned long long	utemp;
 
 	temp = n;
 	utemp = n;
@@ -78,7 +76,7 @@ char			*ft_ntoa(long long n, int digit, t_cond *stat)
 		temp *= -1;
 		stat->m_flag = 1;
 	}
-	if(stat->spec == 'p')
+	if (stat->spec == 'p')
 		while (utemp /= digit)
 			size++;
 	else

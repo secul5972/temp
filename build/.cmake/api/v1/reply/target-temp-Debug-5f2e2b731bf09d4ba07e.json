@@ -46,8 +46,7 @@
 				3,
 				4,
 				5,
-				6,
-				7
+				6
 			]
 		}
 	],
@@ -85,8 +84,7 @@
 				3,
 				4,
 				5,
-				6,
-				7
+				6
 			]
 		},
 		{
@@ -138,12 +136,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "print.c",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "print2.c",
 			"sourceGroupIndex" : 0
 		}
 	],

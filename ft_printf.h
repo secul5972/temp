@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 11:38:13 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/25 19:23:25 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 15:33:11 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ typedef struct	s_cond
 {
 	int			m_flag;
 	int			hex_flag;
-	int			flag;
 	int			n_flag;
+	int			flag;
 	long		width;
 	long		prec;
 	char		spec;
@@ -40,6 +40,7 @@ typedef struct	s_idx
 }				t_idx;
 
 int				ft_strlen(const char *str);
+char			*ft_strdup(const char *src);
 int				ft_max(const long a, const long b);
 int				ft_min(const long a, const long b);
 char			*ft_ntoa(long long n, int digit, t_cond *stat);

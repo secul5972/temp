@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:17:22 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/25 19:16:21 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 16:20:19 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,15 +22,16 @@ char	*print_cpe(va_list ap, t_cond *stat, int c_flag)
 	idx.i = 0;
 	idx.width = ft_max(stat->width, 1);
 	idx.offset = (stat->flag & (1 << 1)) ? 0 : idx.width - 1;
-	if (!(c = c_flag > 0 ? '%' : va_arg(ap, int)))
+	if (!(c = (c_flag > 0) ? '%' : va_arg(ap, int)))
+	{
+		stat->n_flag = 1;
 		idx.width--;
+	}
 	if (!(ret = (char *)malloc(sizeof(char) * (idx.width + 1))))
 		return (0);
 	width_c = (stat->flag & (1 << 0)) ? '0' : ' ';
 	while (idx.i < idx.offset)
 		ret[idx.i++] = width_c;
-	if (!c)
-		stat->n_flag = 1;
 	if (c)
 		ret[idx.i++] = c;
 	while (idx.i < idx.width)
@@ -47,16 +48,7 @@ char	*print_s(va_list ap, t_cond *stat)
 
 	s = va_arg(ap, char *);
 	if (!s)
-	{
-		s = malloc(7);
-		s[0] = '(';
-		s[1] = 'n';
-		s[2] = 'u';
-		s[3] = 'l';
-		s[4] = 'l';
-		s[5] = ')';
-		s[6] = 0;
-	}
+		s = ft_strdup("(null)");
 	idx.len = ft_strlen(s);
 	idx.prec = ft_min(idx.len, stat->prec);
 	idx.width = ft_max(stat->width, idx.prec);
@@ -121,6 +113,14 @@ char	*print_diuxp(va_list ap, t_cond *stat)
 	if (!(ch_d = get_c_arr(ap, stat)))
 		return (0);
 	idx.len = ft_strlen(ch_d);
+	if ((stat->flag == 1) && (stat->m_flag || stat->hex_flag) && stat->prec == -1)
+	{
+		stat->flag = 2;
+		stat->prec = stat->width - stat->m_flag - stat->hex_flag;
+		idx.len-= stat->m_flag + stat->hex_flag;
+		stat->m_flag = 0;
+		stat->hex_flag = 0;
+	}
 	idx.prec = ft_max(idx.len - stat->m_flag - stat->hex_flag, stat->prec)\
 	+ stat->m_flag + stat->hex_flag;
 	idx.width = ft_max(stat->width, idx.prec);
@@ -132,13 +132,7 @@ char	*print_diuxp(va_list ap, t_cond *stat)
 	}
 	idx.i = 0;
 	width_c = ((stat->flag & (1 << 0)) && (stat->prec == -1)) ? '0' : ' ';
-	if ((stat->flag & 1) && !(stat->flag & 2) && (stat->m_flag == 1) && stat->width > idx.len && stat->prec == -1)
-	{
-		ret[idx.i++] = '-';
-		stat->m_flag = 0;
-		ch_d++;
-		idx.len--;
-	}
+	
 	while (idx.i < idx.offset)
 		ret[idx.i++] = width_c;
 	fill_prec(&ret, &idx.i, idx.prec - idx.len, &ch_d);

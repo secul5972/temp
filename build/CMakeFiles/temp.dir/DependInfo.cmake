@@ -14,7 +14,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/Users/seungcoh/doing/temp/ft_printf_utils2.c" "CMakeFiles/temp.dir/ft_printf_utils2.c.o" "gcc" "CMakeFiles/temp.dir/ft_printf_utils2.c.o.d"
   "/Users/seungcoh/doing/temp/main.c" "CMakeFiles/temp.dir/main.c.o" "gcc" "CMakeFiles/temp.dir/main.c.o.d"
   "/Users/seungcoh/doing/temp/print.c" "CMakeFiles/temp.dir/print.c.o" "gcc" "CMakeFiles/temp.dir/print.c.o.d"
-  "/Users/seungcoh/doing/temp/print2.c" "CMakeFiles/temp.dir/print2.c.o" "gcc" "CMakeFiles/temp.dir/print2.c.o.d"
   )
 
 # Targets to which this target links.

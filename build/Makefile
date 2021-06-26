@@ -293,30 +293,6 @@ print.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/print.c.s
 .PHONY : print.c.s
 
-print2.o: print2.c.o
-.PHONY : print2.o
-
-# target to build an object file
-print2.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/print2.c.o
-.PHONY : print2.c.o
-
-print2.i: print2.c.i
-.PHONY : print2.i
-
-# target to preprocess a source file
-print2.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/print2.c.i
-.PHONY : print2.c.i
-
-print2.s: print2.c.s
-.PHONY : print2.s
-
-# target to generate assembly for a file
-print2.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/temp.dir/build.make CMakeFiles/temp.dir/print2.c.s
-.PHONY : print2.c.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -346,9 +322,6 @@ help:
 	@echo "... print.o"
 	@echo "... print.i"
 	@echo "... print.s"
-	@echo "... print2.o"
-	@echo "... print2.i"
-	@echo "... print2.s"
 .PHONY : help
 
 

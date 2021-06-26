@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 12:15:48 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/25 03:48:43 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 15:08:49 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,10 @@ void	check_width(const char **format, va_list ap, t_cond *stat)
 void	check_precision(const char **format, va_list ap, t_cond *stat)
 {
 	long	val;
+	int		m_flag;
 
 	val = 0;
+	m_flag = 0;
 	if (**format != '.')
 		return ;
 	(*format)++;
@@ -64,13 +66,16 @@ void	check_precision(const char **format, va_list ap, t_cond *stat)
 		(*format)++;
 	}
 	else if (**format == '-')
+	{
 		(*format)++;
+		m_flag = 1;
+	}
 	while ('0' <= **format && **format <= '9')
 	{
 		val *= 10;
 		val += *(*format)++ - '0';
 	}
-	stat->prec = (val >= 0) ? val : 2147483648;
+	stat->prec = (val >= 0 && !m_flag) ? val : 2147483648;
 }
 
 char	*check_specifier(const char **format, va_list ap, t_cond *stat)
@@ -78,7 +83,6 @@ char	*check_specifier(const char **format, va_list ap, t_cond *stat)
 	char	*ret;
 
 	ret = 0;
-	
 	if (**format == 'c' || **format == '%')
 		ret = print_cpe(ap, stat, (int)('c' - **format));
 	else if (**format == 's')
