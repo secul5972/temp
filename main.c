@@ -13,7 +13,8 @@ int main(){
 	ft_printf("%-0*.20p|\n", 20, &c);
 	printf("%0*p|\n", 20, &c);
 	ft_printf("%0*p|\n", 20, &c);
-	printf("%0*d|\n", 4, -12);
-	ft_printf("%0*d|\n",4, -12);
-	
+	printf("%0*d|\n", 8, -123);
+	ft_printf("%0*d|\n",8, -123);
+	printf("%-.*d|\n", 7, -123);
+	ft_printf("%-.*d|\n",7, -123);
 }

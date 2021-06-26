@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 11:38:13 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/26 15:33:11 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 16:45:59 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 typedef struct	s_cond
 {
 	int			m_flag;
-	int			hex_flag;
+	int			h_flag;
 	int			n_flag;
 	int			flag;
 	long		width;
@@ -50,7 +50,6 @@ void			check_precision(const char **format, va_list ap, t_cond *stat);
 char			*check_specifier(const char **format, va_list ap, t_cond *stat);
 char			*print_cpe(va_list ap, t_cond *stat, int c_flag);
 char			*print_s(va_list ap, t_cond *stat);
-char			*get_c_arr(va_list ap, t_cond *stat);
 char			*print_diuxp(va_list ap, t_cond *stat);
 int				ft_printf(const char *format, ...);
 #endif

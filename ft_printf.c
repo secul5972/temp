@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 11:37:42 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/25 19:08:16 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 16:34:00 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	init(t_cond *stat)
 {
 	stat->m_flag = 0;
-	stat->hex_flag = 0;
+	stat->h_flag = 0;
 	stat->n_flag = 0;
 	stat->flag = 0;
 	stat->spec = 0;
@@ -45,12 +45,10 @@ int		print_format(const char **format, va_list ap)
 		if (**format == '%')
 		{
 			init(&stat);
-			if((prt = check_ap(format, ap, &stat)))
+			if ((prt = check_ap(format, ap, &stat)))
 			{
 				write(1, prt, (len = ft_strlen(prt)));
-				ret += len;
-				if (stat.n_flag)
-					ret++;
+				ret += (stat.n_flag) ? len + 1 : len;
 			}
 			free(prt);
 		}

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+         #
+#    By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/05/11 19:20:46 by seungcoh          #+#    #+#              #
-#    Updated: 2021/05/17 13:54:11 by seungcoh         ###   ########.fr        #
+#    Updated: 2021/06/26 16:45:04 by seungcoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ NAME = libftprintf.a
 SRCS = ft_printf.c\
        ft_printf_utils.c\
        ft_printf_utils2.c\
-       print.c\
+       print_cpes.c\
+	   print_diuxp.c\
        check.c
 OBJS = $(SRCS:.c=.o)
 

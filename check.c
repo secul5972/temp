@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 12:15:48 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/26 15:08:49 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 16:28:39 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ char	*check_specifier(const char **format, va_list ap, t_cond *stat)
 	else if (**format == 'p')
 	{
 		stat->spec = **format;
-		stat->hex_flag = 2;
+		stat->h_flag = 2;
 		ret = print_diuxp(ap, stat);
 	}
 	else
