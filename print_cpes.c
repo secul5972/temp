@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 16:42:45 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/26 16:43:07 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 19:50:32 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char		*print_cpe(va_list ap, t_cond *stat, int c_flag)
 
 	idx.i = 0;
 	idx.width = ft_max(stat->width, 1);
+	stat->width = idx.width;
 	idx.offset = (stat->flag & (1 << 1)) ? 0 : idx.width - 1;
 	if (!(c = (c_flag > 0) ? '%' : va_arg(ap, int)))
 	{
@@ -65,5 +66,6 @@ char		*print_s(va_list ap, t_cond *stat)
 	ret[idx.i] = 0;
 	if (!s)
 		free(s);
+	stat->width = ft_strlen(ret);
 	return (ret);
 }

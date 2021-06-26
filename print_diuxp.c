@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/22 16:17:22 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/26 19:24:12 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 19:50:00 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,5 +94,6 @@ char		*print_diuxp(va_list ap, t_cond *stat)
 	ret[idx.i] = 0;
 	if (!ch_d)
 		free(ch_d);
+	stat->width = ft_strlen(ret);
 	return (ret);
 }
