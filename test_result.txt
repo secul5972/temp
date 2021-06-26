@@ -137,64 +137,64 @@ gcc -Wall -Wextra -Werror -c print_cpes.c -o print_cpes.o
 gcc -Wall -Wextra -Werror -c print_diuxp.c -o print_diuxp.o
 gcc -Wall -Wextra -Werror -c check.c -o check.o
 ar -rc libftprintf.a ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.o check.o
-1 [0x7ffeecca1ab0]18					      |	1 [0x7ffee8013ab0]18
-1.1 [0x7ffeecca1ab0]20					      |	1.1 [0x7ffee8013ab0]20
-3 ! [0x7ffeecca1ab0]20					      |	3 ! [0x7ffee8013ab0]20
-3.4 ![0x7ffeecca1ab0]21					      |	3.4 ![0x7ffee8013ab0]21
-5 [0x7ffeecca1ab0]18					      |	5 [0x7ffee8013ab0]18
-10 [0x7ffeecca1ab0                                            |	10 [0x7ffee8013ab0                                           
-10 [0x7ffeecca1ab0]19					      |	10 [0x7ffee8013ab0]19
-10 [0x7ffeecca1ab0]19					      |	10 [0x7ffee8013ab0]19
-10 [0x7ffeecca1ab0]19					      |	10 [0x7ffee8013ab0]19
-10 [0x7ffeecca1ab0]19					      |	10 [0x7ffee8013ab0]19
+1 [0x7ffee1feaab0]18					      |	1 [0x7ffeee47eab0]18
+1.1 [0x7ffee1feaab0]20					      |	1.1 [0x7ffeee47eab0]20
+3 ! [0x7ffee1feaab0]20					      |	3 ! [0x7ffeee47eab0]20
+3.4 ![0x7ffee1feaab0]21					      |	3.4 ![0x7ffeee47eab0]21
+5 [0x7ffee1feaab0]18					      |	5 [0x7ffeee47eab0]18
+10 [0x7ffee1feaab0                                            |	10 [0x7ffeee47eab0                                           
+10 [0x7ffee1feaab0]19					      |	10 [0x7ffeee47eab0]19
+10 [0x7ffee1feaab0]19					      |	10 [0x7ffeee47eab0]19
+10 [0x7ffee1feaab0]19					      |	10 [0x7ffeee47eab0]19
+10 [0x7ffee1feaab0]19					      |	10 [0x7ffeee47eab0]19
 10 [                                                          |	10 [                                                         
 10 [                                                          |	10 [                                                         
-1 [0x7ffeecca1ab4]18					      |	1 [0x7ffee8013ab4]18
-1.1 [0x7ffeecca1ab4]20					      |	1.1 [0x7ffee8013ab4]20
-3 ! [0x7ffeecca1ab4]20					      |	3 ! [0x7ffee8013ab4]20
-3.4 ![0x7ffeecca1ab4]21					      |	3.4 ![0x7ffee8013ab4]21
-5 [0x7ffeecca1ab4]18					      |	5 [0x7ffee8013ab4]18
-10 [0x7ffeecca1ab4                                            |	10 [0x7ffee8013ab4                                           
-10 [0x7ffeecca1ab4]19					      |	10 [0x7ffee8013ab4]19
-10 [0x7ffeecca1ab4]19					      |	10 [0x7ffee8013ab4]19
-10 [0x7ffeecca1ab4]19					      |	10 [0x7ffee8013ab4]19
-10 [0x7ffeecca1ab4]19					      |	10 [0x7ffee8013ab4]19
+1 [0x7ffee1feaab4]18					      |	1 [0x7ffeee47eab4]18
+1.1 [0x7ffee1feaab4]20					      |	1.1 [0x7ffeee47eab4]20
+3 ! [0x7ffee1feaab4]20					      |	3 ! [0x7ffeee47eab4]20
+3.4 ![0x7ffee1feaab4]21					      |	3.4 ![0x7ffeee47eab4]21
+5 [0x7ffee1feaab4]18					      |	5 [0x7ffeee47eab4]18
+10 [0x7ffee1feaab4                                            |	10 [0x7ffeee47eab4                                           
+10 [0x7ffee1feaab4]19					      |	10 [0x7ffeee47eab4]19
+10 [0x7ffee1feaab4]19					      |	10 [0x7ffeee47eab4]19
+10 [0x7ffee1feaab4]19					      |	10 [0x7ffeee47eab4]19
+10 [0x7ffee1feaab4]19					      |	10 [0x7ffeee47eab4]19
 10 [                                                          |	10 [                                                         
 10 [                                                          |	10 [                                                         
-1 [0x7ffeecca1ab8]18					      |	1 [0x7ffee8013ab8]18
-1.1 [0x7ffeecca1ab8]20					      |	1.1 [0x7ffee8013ab8]20
-3 ! [0x7ffeecca1ab8]20					      |	3 ! [0x7ffee8013ab8]20
-3.4 ![0x7ffeecca1ab8]21					      |	3.4 ![0x7ffee8013ab8]21
-5 [0x7ffeecca1ab8]18					      |	5 [0x7ffee8013ab8]18
-10 [0x7ffeecca1ab8                                            |	10 [0x7ffee8013ab8                                           
-10 [0x7ffeecca1ab8]19					      |	10 [0x7ffee8013ab8]19
-10 [0x7ffeecca1ab8]19					      |	10 [0x7ffee8013ab8]19
-10 [0x7ffeecca1ab8]19					      |	10 [0x7ffee8013ab8]19
-10 [0x7ffeecca1ab8]19					      |	10 [0x7ffee8013ab8]19
+1 [0x7ffee1feaab8]18					      |	1 [0x7ffeee47eab8]18
+1.1 [0x7ffee1feaab8]20					      |	1.1 [0x7ffeee47eab8]20
+3 ! [0x7ffee1feaab8]20					      |	3 ! [0x7ffeee47eab8]20
+3.4 ![0x7ffee1feaab8]21					      |	3.4 ![0x7ffeee47eab8]21
+5 [0x7ffee1feaab8]18					      |	5 [0x7ffeee47eab8]18
+10 [0x7ffee1feaab8                                            |	10 [0x7ffeee47eab8                                           
+10 [0x7ffee1feaab8]19					      |	10 [0x7ffeee47eab8]19
+10 [0x7ffee1feaab8]19					      |	10 [0x7ffeee47eab8]19
+10 [0x7ffee1feaab8]19					      |	10 [0x7ffeee47eab8]19
+10 [0x7ffee1feaab8]19					      |	10 [0x7ffeee47eab8]19
 10 [                                                          |	10 [                                                         
 10 [                                                          |	10 [                                                         
-1 [0x7ffeecca1abc]18					      |	1 [0x7ffee8013abc]18
-1.1 [0x7ffeecca1abc]20					      |	1.1 [0x7ffee8013abc]20
-3 ! [0x7ffeecca1abc]20					      |	3 ! [0x7ffee8013abc]20
-3.4 ![0x7ffeecca1abc]21					      |	3.4 ![0x7ffee8013abc]21
-5 [0x7ffeecca1abc]18					      |	5 [0x7ffee8013abc]18
-10 [0x7ffeecca1abc                                            |	10 [0x7ffee8013abc                                           
-10 [0x7ffeecca1abc]19					      |	10 [0x7ffee8013abc]19
-10 [0x7ffeecca1abc]19					      |	10 [0x7ffee8013abc]19
-10 [0x7ffeecca1abc]19					      |	10 [0x7ffee8013abc]19
-10 [0x7ffeecca1abc]19					      |	10 [0x7ffee8013abc]19
+1 [0x7ffee1feaabc]18					      |	1 [0x7ffeee47eabc]18
+1.1 [0x7ffee1feaabc]20					      |	1.1 [0x7ffeee47eabc]20
+3 ! [0x7ffee1feaabc]20					      |	3 ! [0x7ffeee47eabc]20
+3.4 ![0x7ffee1feaabc]21					      |	3.4 ![0x7ffeee47eabc]21
+5 [0x7ffee1feaabc]18					      |	5 [0x7ffeee47eabc]18
+10 [0x7ffee1feaabc                                            |	10 [0x7ffeee47eabc                                           
+10 [0x7ffee1feaabc]19					      |	10 [0x7ffeee47eabc]19
+10 [0x7ffee1feaabc]19					      |	10 [0x7ffeee47eabc]19
+10 [0x7ffee1feaabc]19					      |	10 [0x7ffeee47eabc]19
+10 [0x7ffee1feaabc]19					      |	10 [0x7ffeee47eabc]19
 10 [                                                          |	10 [                                                         
 10 [                                                          |	10 [                                                         
-1 [0x7ffeecca1ac0]18					      |	1 [0x7ffee8013ac0]18
-1.1 [0x7ffeecca1ac0]20					      |	1.1 [0x7ffee8013ac0]20
-3 ! [0x7ffeecca1ac0]20					      |	3 ! [0x7ffee8013ac0]20
-3.4 ![0x7ffeecca1ac0]21					      |	3.4 ![0x7ffee8013ac0]21
-5 [0x7ffeecca1ac0]18					      |	5 [0x7ffee8013ac0]18
-10 [0x7ffeecca1ac0                                            |	10 [0x7ffee8013ac0                                           
-10 [0x7ffeecca1ac0]19					      |	10 [0x7ffee8013ac0]19
-10 [0x7ffeecca1ac0]19					      |	10 [0x7ffee8013ac0]19
-10 [0x7ffeecca1ac0]19					      |	10 [0x7ffee8013ac0]19
-10 [0x7ffeecca1ac0]19					      |	10 [0x7ffee8013ac0]19
+1 [0x7ffee1feaac0]18					      |	1 [0x7ffeee47eac0]18
+1.1 [0x7ffee1feaac0]20					      |	1.1 [0x7ffeee47eac0]20
+3 ! [0x7ffee1feaac0]20					      |	3 ! [0x7ffeee47eac0]20
+3.4 ![0x7ffee1feaac0]21					      |	3.4 ![0x7ffeee47eac0]21
+5 [0x7ffee1feaac0]18					      |	5 [0x7ffeee47eac0]18
+10 [0x7ffee1feaac0                                            |	10 [0x7ffeee47eac0                                           
+10 [0x7ffee1feaac0]19					      |	10 [0x7ffeee47eac0]19
+10 [0x7ffee1feaac0]19					      |	10 [0x7ffeee47eac0]19
+10 [0x7ffee1feaac0]19					      |	10 [0x7ffeee47eac0]19
+10 [0x7ffee1feaac0]19					      |	10 [0x7ffeee47eac0]19
 10 [                                                          |	10 [                                                         
 10 [                                                          |	10 [                                                         
  							      |
@@ -215,19 +215,7 @@ rm -f ft_printf.o ft_printf_utils.o ft_printf_utils2.o print_cpes.o print_diuxp.
 rm -f libftprintf.a
 ######### 42TESTERS-PRINTF ##########
 #####42TESTS-PRINTF#####
-----------Test 510 : ----------
-"%c, %-c, %12c, %-3c, %-1c, %1c, %-2c, %-4c, %5c, %3c, %-*c, %-*c, %*c, %*c" // 1st '*' = 12, 2nd '*' = 18
-
-Binary files ft.txt and printf.txt differ
-
 #########PFT##########
-Test  27 (c_nullterm_5wlj) : FAILED.$
-    First line of code: {return test("%-5c", '$
-      expected output : "^@    "$
-      your output     : "    ^@"$
-      expected (nonprintable as hex) : "\x00    "$
-      actual   (nonprintable as hex) : "    \x00"$
-$
 Test 647 (moul_star_2) : FAILED.$
     First line of code: {return test("%% *.5i 42 == |% *.5i|$
 ", 4, 42);}$
@@ -278,24 +266,7 @@ Test 130 (s_undefbehav_0_width_9) : FAILED.$
       expected (nonprintable as hex) : "000hi low"$
       actual   (nonprintable as hex) : "   hi low"$
 $
-Test 459 (c_nullterm_5wlj) : FAILED.$
-    First line of code: {return test("%-5c", '$
-      expected return value : 5$
-      your return value     : 5$
-      expected output : "^@    "$
-      your output     : "    ^@"$
-      expected (nonprintable as hex) : "\x00    "$
-      actual   (nonprintable as hex) : "    \x00"$
-$
 ######### printf_lover_v2 ##########
 ######### printf-tester ##########
 ######### ft_printf_test ##########
-- [OUTPUT] ft_printf("%-5c", '\0')
-   expected: ""
-   actual:   "    "
-
-- [OUTPUT] ft_printf("{%*c}", -15, 0)
-   expected: "{"
-   actual:   "{              "
-
 ######### Test-42 ##########

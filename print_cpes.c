@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/26 16:42:45 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/06/26 19:50:32 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/06/26 20:04:02 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,13 @@ char		*print_cpe(va_list ap, t_cond *stat, int c_flag)
 	stat->width = idx.width;
 	idx.offset = (stat->flag & (1 << 1)) ? 0 : idx.width - 1;
 	if (!(c = (c_flag > 0) ? '%' : va_arg(ap, int)))
-	{
 		stat->n_flag = 1;
-		idx.width--;
-	}
 	if (!(ret = (char *)malloc(sizeof(char) * (idx.width + 1))))
 		return (0);
 	width_c = (stat->flag & (1 << 0)) ? '0' : ' ';
 	while (idx.i < idx.offset)
 		ret[idx.i++] = width_c;
-	if (c)
-		ret[idx.i++] = c;
+	ret[idx.i++] = c;
 	while (idx.i < idx.width)
 		ret[idx.i++] = ' ';
 	ret[idx.i] = 0;
