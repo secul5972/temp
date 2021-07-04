@@ -1,5 +1,0 @@
-/Users/seungcoh/doing/temp/build/CMakeFiles/rebuild_cache.dir
-/Users/seungcoh/doing/temp/build/CMakeFiles/edit_cache.dir
-/Users/seungcoh/doing/temp/build/CMakeFiles/package_source.dir
-/Users/seungcoh/doing/temp/build/CMakeFiles/package.dir
-/Users/seungcoh/doing/temp/build/CMakeFiles/temp.dir
