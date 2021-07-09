@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:08:17 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/09 10:12:49 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/09 11:21:06 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,27 @@ void	s_ins(t_lpair *head, int h_flag)
 	{
 		curr = head->a;
 		first_node = curr->next;
-		first_node->next = first_node->next->next;
-		first_node->next->next->pre = first_node;
+		if (first_node->next->next)
+			first_node->next->next->pre = first_node;
 		curr->next = first_node->next;
 		first_node->next->pre = curr;
 		first_node->pre = curr->next;
+		first_node->next = first_node->next->next;
+		curr->next->next = first_node;
 	}
 	if (h_flag & 2)
 	{
 		curr = head->b;
 		first_node = curr->next;
-		first_node->next = first_node->next->next;
-		first_node->next->next->pre = first_node;
+		if (first_node->next->next)
+			first_node->next->next->pre = first_node;
 		curr->next = first_node->next;
 		first_node->next->pre = curr;
 		first_node->pre = curr->next;
+		first_node->next = first_node->next->next;
+		curr->next->next = first_node;
 	}
+	
 }
 
 void	p_ins(t_lpair *head, int h_flag)
@@ -48,7 +53,7 @@ void	p_ins(t_lpair *head, int h_flag)
 	pop_head = head->b;
 	if (h_flag == 2)
 		list_swap(&push_head, &pop_head);
-	ft_push(push_head, ft_pop(push_head, 0), 0);
+	ft_push(push_head, ft_pop(pop_head, 0), 0);
 }
 
 void	r_ins(t_lpair *head, int h_flag, int rev_flag)
