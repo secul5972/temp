@@ -6,42 +6,48 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 00:27:03 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/09 00:58:50 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/09 10:03:34 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	small_div(t_list *a, t_list *b, int h_flag)
+void	small_div(t_lpair *head, int s_flag, t_ipair *cnt)
 {
-	if (h_flag)
-		p_ins(a, b, 2);
-	else
+	if (s_flag == 1 || s_flag == 3)
+		p_ins(head, 2);
+	else if(s_flag == 2)
 	{
-
+		r_ins(head, 2, 0);
+		cnt->first++;
 	}
 }
 
-void	middle_div(t_list *a, t_list *b, int h_flag, int *cnt)
+void	middle_div(t_lpair *head, int s_flag, t_ipair *cnt)
 {
-	if (h_flag)
+	if (s_flag == 1 || s_flag == 3)
 	{
-		p_ins(a, b, 2);
-		r_ins(a, b, 2, 0);
+		p_ins(head, 2);
+		r_ins(head, 2, 0);
+		cnt->first++;
 	}
-	else
+	else if (s_flag == 2)
 	{
+		p_ins(head, 1);
+		r_ins(head, 1, 0);
+		cnt->second++;
+	}
 
-	}
-	(*cnt)++;
 }
 
-void	big_div(t_list *a, t_list *b, int h_flag)
+void	big_div(t_lpair *head, int s_flag, t_ipair *cnt)
 {
-	if (h_flag)
-		r_ins(a, b, 1, 0);
-	else
+	if (s_flag == 1 || s_flag == 3)
 	{
-
+		r_ins(head, 1, 0);
+		if (s_flag == 3)
+			cnt->first++;
 	}
+	else if(s_flag == 2)
+		p_ins(head, 1);
 }
