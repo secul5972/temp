@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:37:11 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/09 11:21:04 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/10 12:56:13 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,38 @@ void	ft_make_list(t_list **head, const int *val, const int size)
 	}
 	(*head)->end = curr;
 	(*head)->size = size;
+	if (size > 0)
+		(*head)->next->size = size;
 }
 
 void	ft_push(t_list *head, t_list *pop_node, int e_flag)
 {
 	if (e_flag)
 	{
-		head->end->next = pop_node;
-		pop_node->pre = head->end;
+	
+		pop_node->next = 0;
+		if (head->end)
+		{
+			head->end->next = pop_node;
+			pop_node->pre = head->end;
+		}
+		else
+		{
+			head->next = pop_node;
+			pop_node->pre = head;
+		}
 		head->end = pop_node;
+		pop_node->next = 0;
 	}
 	else
 	{
 		pop_node->next = head->next;
-		head->next->pre = pop_node;
+		if (head->next)
+			head->next->pre = pop_node;
 		pop_node->pre = head;
 		head->next = pop_node;
+		if (!head->size)
+			head->end = pop_node;
 	}
 	head->size++;
 }

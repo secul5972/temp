@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:08:17 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/09 11:21:06 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/10 11:47:20 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	p_ins(t_lpair *head, int h_flag)
 	push_head = head->a;
 	pop_head = head->b;
 	if (h_flag == 2)
-		list_swap(&push_head, &pop_head);
+		l_swap(&push_head, &pop_head);
 	ft_push(push_head, ft_pop(pop_head, 0), 0);
 }
 

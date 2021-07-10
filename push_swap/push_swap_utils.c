@@ -6,15 +6,24 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:38:14 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/09 11:21:08 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/10 11:29:25 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	list_swap(t_list **f, t_list **s)
+void	l_swap(t_list **f, t_list **s)
 {
 	t_list *temp;
+	
+	temp = *f;
+	*f = *s;
+	*s = temp;
+}
+
+void	i_swap(int *f, int *s)
+{
+	int	temp;
 	
 	temp = *f;
 	*f = *s;

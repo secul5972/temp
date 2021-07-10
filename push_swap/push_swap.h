@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:12:48 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/09 11:21:10 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/10 11:29:37 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ typedef struct	s_lpair
 	t_list *b;
 }				t_lpair;
 
-void	list_swap(t_list **f, t_list **s);
+void	l_swap(t_list **f, t_list **s);
+void	i_swap(int *f, int *s);
 void	ft_make_list(t_list **head, const int *val, const int size);
 void	ft_push(t_list *head, t_list *pop_node, int e_flag);
 t_list	*ft_pop(t_list *head, int e_flag);

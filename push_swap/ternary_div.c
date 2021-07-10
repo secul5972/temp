@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 00:27:03 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/09 11:21:11 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/10 13:17:01 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,41 +14,40 @@
 
 static void	small_div(t_lpair *head, int s_flag, t_ipair *cnt)
 {
-	if (s_flag == 1 || s_flag == 3)
+	if (s_flag == 0 || s_flag == 2)
 		p_ins(head, 2);
-	else if(s_flag == 2)
+	else if(s_flag == 1)
 	{
 		r_ins(head, 2, 0);
-		cnt->first++;
+		cnt->second++;
 	}
 }
 
 static void	middle_div(t_lpair *head, int s_flag, t_ipair *cnt)
 {
-	if (s_flag == 1 || s_flag == 3)
+	if (s_flag == 0 || s_flag == 2)
 	{
 		p_ins(head, 2);
 		r_ins(head, 2, 0);
-		cnt->first++;
+		cnt->second++;
 	}
-	else if (s_flag == 2)
+	else if (s_flag == 1)
 	{
 		p_ins(head, 1);
 		r_ins(head, 1, 0);
-		cnt->second++;
+		cnt->first++;
 	}
 
 }
 
 static void	big_div(t_lpair *head, int s_flag, t_ipair *cnt)
 {
-	if (s_flag == 1 || s_flag == 3)
+	if (s_flag == 0 || s_flag == 2)
 	{
 		r_ins(head, 1, 0);
-		if (s_flag == 3)
-			cnt->first++;
+		cnt->first++;
 	}
-	else if(s_flag == 2)
+	else if(s_flag == 1)
 		p_ins(head, 1);
 }
 
@@ -77,41 +76,69 @@ static void	init_div(t_list *head, t_ipair *pivot, t_ipair *cnt)
 	}
 	cnt->first = 0;
 	cnt->second = 0;
+	if (pivot->first > pivot->second)
+		i_swap(&pivot->first, &pivot->second);
 }
 
 void	ternary_div(t_lpair *head, int s_flag)
 {
 	int		i;
+	int		j;
+	int		size;
+	int		val;
 	t_ipair	pivot;
 	t_ipair	cnt;
-	t_list	*curr;
+	t_list	*next;
 
 	init_div(head->a, &pivot, &cnt);
-	if (s_flag == 1 || s_flag == 3)
+	if (s_flag == 0 || s_flag == 2)
 	{
-		i = head->a->size;
-		curr = head->a->next;
+		size = head->a->next->size;
+		head->a->next->size = 0;
+		next = head->a->next;
 	}
-	else if (s_flag == 2)
+	else if (s_flag == 1)
 	{
-		i = head->b->size;
-		curr = head->b->next;
+		size = head->b->next->size;
+		head->b->next->size = 0;
+		next = head->b->next;
 	}
+	val = next->val;
+	next = next->next;
+	i = size;
 	while (i--)
 	{
-		if (curr->val < pivot.first)
+		if (val < pivot.first)
 			small_div(head, s_flag, &cnt);
-		else if (pivot.first <= curr->val && curr->val < pivot.second)
+		else if (pivot.first <= val && val < pivot.second)
 			middle_div(head, s_flag, &cnt);
 		else
 			big_div(head, s_flag, &cnt);
+		val = next->val;
+		next = next->next;
 	}
-	head->a->size = cnt.first;
-	head->b->size = cnt.second;
-	while (cnt.first-- && cnt.second--)
-		r_ins(head, 3, 1);
-	while (cnt.first--)
-		r_ins(head, 1, 1);
-	while (cnt.second--)
+	if (s_flag == 0 || s_flag == 2)
+		head->b->next->size = size - cnt.first - cnt.second;
+	if (s_flag == 0)
+	{
+		head->a->next->size = cnt.first;
+		cnt.first = 0;
+	}
+	if (s_flag == 1)
+		head->a->next->size = size - cnt.first - cnt.second;
+	i = 0;
+	j = 0;
+	while (i < cnt.first && j < cnt.second)
+	{
 		r_ins(head, 2, 1);
+		i++;
+		j++;
+	}
+	while (i++ < cnt.first)
+		r_ins(head, 1, 1);
+	while (j++ < cnt.second)
+		r_ins(head, 2, 1);
+	head->b->next->size = cnt.second;
+	if (s_flag == 1 || s_flag == 2)
+		head->a->next->size = cnt.first;
 }
