@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 00:27:03 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/10 13:17:01 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/10 14:27:04 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ static void	init_div(t_list *head, t_ipair *pivot, t_ipair *cnt)
 		i_swap(&pivot->first, &pivot->second);
 }
 
-void	ternary_div(t_lpair *head, int s_flag)
+int	ternary_div(t_lpair *head, int s_flag)
 {
 	int		i;
 	int		j;
@@ -90,19 +90,22 @@ void	ternary_div(t_lpair *head, int s_flag)
 	t_ipair	cnt;
 	t_list	*next;
 
-	init_div(head->a, &pivot, &cnt);
 	if (s_flag == 0 || s_flag == 2)
 	{
+		init_div(head->a, &pivot, &cnt);
 		size = head->a->next->size;
 		head->a->next->size = 0;
 		next = head->a->next;
 	}
 	else if (s_flag == 1)
 	{
+		init_div(head->b, &pivot, &cnt);
 		size = head->b->next->size;
 		head->b->next->size = 0;
 		next = head->b->next;
 	}
+	if (size < 3)
+		return (les_than_thr(head, s_flag, size));
 	val = next->val;
 	next = next->next;
 	i = size;
@@ -141,4 +144,5 @@ void	ternary_div(t_lpair *head, int s_flag)
 	head->b->next->size = cnt.second;
 	if (s_flag == 1 || s_flag == 2)
 		head->a->next->size = cnt.first;
+	return (1);
 }

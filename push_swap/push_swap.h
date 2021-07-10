@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:12:48 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/10 11:29:37 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/10 14:27:34 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,10 @@ void	i_swap(int *f, int *s);
 void	ft_make_list(t_list **head, const int *val, const int size);
 void	ft_push(t_list *head, t_list *pop_node, int e_flag);
 t_list	*ft_pop(t_list *head, int e_flag);
-void	ternary_div(t_lpair *head, int s_flag);
 void	s_ins(t_lpair *head, int h_flag);
 void	p_ins(t_lpair *head, int h_flag);
 void	r_ins(t_lpair *head, int h_flag, int rev_flag);
+int		les_than_thr(t_lpair *head, int s_flag, int size);
+int		ternary_div(t_lpair *head, int s_flag);
+
 #endif
