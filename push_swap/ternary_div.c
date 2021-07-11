@@ -6,49 +6,49 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 00:27:03 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/11 12:44:55 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/11 14:18:33 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	small_div(t_lpair *head, int s_flag, t_ipair *cnt)
+static void	small_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list **ins)
 {
 	if (s_flag == 1 || s_flag == 3)
-		p_ins(head, 2);
+		p_ins(head, 2, ins);
 	else if(s_flag == 2)
 	{
-		r_ins(head, 2, 0);
+		r_ins(head, 2, 0, ins);
 		cnt->second++;
 	}
 }
 
-static void	middle_div(t_lpair *head, int s_flag, t_ipair *cnt)
+static void	middle_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list **ins)
 {
 	if (s_flag == 1 || s_flag == 3)
 	{
-		p_ins(head, 2);
-		r_ins(head, 2, 0);
+		p_ins(head, 2, ins);
+		r_ins(head, 2, 0, ins);
 		cnt->second++;
 	}
 	else if (s_flag == 2)
 	{
-		p_ins(head, 1);
-		r_ins(head, 1, 0);
+		p_ins(head, 1, ins);
+		r_ins(head, 1, 0, ins);
 		cnt->first++;
 	}
 
 }
 
-static void	big_div(t_lpair *head, int s_flag, t_ipair *cnt)
+static void	big_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list **ins)
 {
 	if (s_flag == 1 || s_flag == 3)
 	{
-		r_ins(head, 1, 0);
+		r_ins(head, 1, 0, ins);
 		cnt->first++;
 	}
 	else if(s_flag == 2)
-		p_ins(head, 1);
+		p_ins(head, 1, ins);
 }
 
 static int	init_div(t_list *head, t_ipair *pivot, t_ipair *cnt)
@@ -84,7 +84,7 @@ static int	init_div(t_list *head, t_ipair *pivot, t_ipair *cnt)
 	return (size);
 }
 
-int	ternary_div(t_lpair *head, int s_flag)
+int	ternary_div(t_lpair *head, int s_flag, t_list **ins)
 {
 	int		i;
 	int		j;
@@ -105,20 +105,19 @@ int	ternary_div(t_lpair *head, int s_flag)
 		next = head->b->next;
 	}
 	if (size < 3)
-		return (les_than_thr(head, s_flag, size));
-	val = next->val;
-	next = next->next;
+		return (les_than_thr(head, s_flag, size, ins));
+
 	i = size;
 	while (i--)
 	{
-		if (val < pivot.first)
-			small_div(head, s_flag, &cnt);
-		else if (pivot.first <= val && val < pivot.second)
-			middle_div(head, s_flag, &cnt);
-		else
-			big_div(head, s_flag, &cnt);
 		val = next->val;
 		next = next->next;
+		if (val < pivot.first)
+			small_div(head, s_flag, &cnt, ins);
+		else if (pivot.first <= val && val < pivot.second)
+			middle_div(head, s_flag, &cnt, ins);
+		else
+			big_div(head, s_flag, &cnt, ins);
 	}
 	if ((s_flag == 1 || s_flag == 3) && (size - cnt.first - cnt.second))
 		head->b->next->size = size - cnt.first - cnt.second;
@@ -133,14 +132,14 @@ int	ternary_div(t_lpair *head, int s_flag)
 	j = 0;
 	while (i < cnt.first && j < cnt.second)
 	{
-		r_ins(head, 3, 1);
+		r_ins(head, 3, 1, ins);
 		i++;
 		j++;
 	}
 	while (i++ < cnt.first)
-		r_ins(head, 1, 1);
+		r_ins(head, 1, 1, ins);
 	while (j++ < cnt.second)
-		r_ins(head, 2, 1);
+		r_ins(head, 2, 1, ins);
 	if (cnt.second)
 		head->b->next->size = cnt.second;
 	if ((s_flag == 2 || s_flag == 3) && cnt.first)

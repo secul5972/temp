@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:37:11 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/10 12:56:13 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/11 13:29:15 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ void	ft_make_list(t_list **head, const int *val, const int size)
 	}
 	(*head)->end = curr;
 	(*head)->size = size;
+	if (!size)
+		(*head)->val = 0;
 	if (size > 0)
 		(*head)->next->size = size;
 }
