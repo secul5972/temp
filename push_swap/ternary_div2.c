@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 14:11:57 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/10 14:29:25 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/11 12:43:25 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,22 @@
 int		les_than_thr(t_lpair *head, int s_flag, int size)
 {
 	if (size == 1)
-	{	if (s_flag == 1)
+	{	if (s_flag == 2)
 			p_ins(head, 1);
 	}
-	else
-		if (s_flag == 0)
+	else{
+		if (s_flag == 1)
+		{
 			if (head->a->next->val > head->a->next->next->val)
 				s_ins(head, 1);
+		}
+		else if (s_flag == 2)
+		{
+			p_ins(head, 1);
+			p_ins(head, 1);
+			if (head->a->next->val > head->a->next->next->val)
+				s_ins(head, 1);
+		}
+	}
 	return (0);
 }

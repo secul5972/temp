@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:08:17 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/10 11:47:20 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/11 12:06:06 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,23 @@
 
 void	s_ins(t_lpair *head, int h_flag)
 {
-	t_list *curr;
-	t_list *first_node;
+	t_list *f_node;
+	t_list *s_node;
 
 	if (h_flag & 1)
 	{
-		curr = head->a;
-		first_node = curr->next;
-		if (first_node->next->next)
-			first_node->next->next->pre = first_node;
-		curr->next = first_node->next;
-		first_node->next->pre = curr;
-		first_node->pre = curr->next;
-		first_node->next = first_node->next->next;
-		curr->next->next = first_node;
+		f_node = ft_pop(head->a, 0);
+		s_node = ft_pop(head->a, 0);
+		ft_push(head->a, f_node, 0);
+		ft_push(head->a, s_node, 0);
 	}
 	if (h_flag & 2)
 	{
-		curr = head->b;
-		first_node = curr->next;
-		if (first_node->next->next)
-			first_node->next->next->pre = first_node;
-		curr->next = first_node->next;
-		first_node->next->pre = curr;
-		first_node->pre = curr->next;
-		first_node->next = first_node->next->next;
-		curr->next->next = first_node;
+		f_node = ft_pop(head->b, 0);
+		s_node = ft_pop(head->b, 0);
+		ft_push(head->b, f_node, 0);
+		ft_push(head->b, s_node, 0);
 	}
-	
 }
 
 void	p_ins(t_lpair *head, int h_flag)
