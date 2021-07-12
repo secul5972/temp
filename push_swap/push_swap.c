@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:08:29 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/12 14:08:26 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/12 15:23:43 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,6 @@ int	*input_pre(int argc, char **argv)
 	int		*ret;
 
 	ret = 0;
-	if (argc == 1)
-		return (0);
 	i = 1;
 	ret = malloc(sizeof(int)*(argc - 1));
 	if (!ret)
@@ -70,28 +68,57 @@ int	*input_pre(int argc, char **argv)
 	return (ret);
 }
 
+int	init(t_lpair *head, int *num, int argc, t_list **ins)
+{
+	int i;
+	int j;
+	int ret = 2;
+
+	i = 0;
+	if (!num)
+		return (1);
+	while (i < (argc - 1))
+	{
+		j = i + 1;
+		while(j < (argc - 1))
+		{
+			if (num[i] == num[j])
+				return (1);
+			if (num[i] > num[j])
+				ret = 0;
+			j++;
+		}
+		i++;
+	}
+	if (ret)
+		return (ret);
+	*ins = (t_list*)malloc(sizeof(t_list));
+	ft_make_list(&(head->a), num, argc - 1);
+	ft_make_list(&(head->b), 0, 0);
+	ft_make_list(&((*ins)->next), 0, 0);
+	return (0);
+}
 int main(int argc, char **argv)
 {
 	t_lpair head;
 	t_list	*ins;
 	t_list	*temp;
 	int		*num;
-	int		size;
+	int		ret;
 
+	if (argc == 1)
+		return (0);
 	num = input_pre(argc, argv);
-	if (!num)
+	ret = init(&head, num, argc, &ins);
+	if (ret)
 	{
-		write(2, "error\n", 6);
+		if (ret != 2)
+			write(2, "Error\n", 6);
 		return (0);
 	}
-	ins = (t_list*)malloc(sizeof(t_list));
-	size = argc - 1;
-	ft_make_list(&(head.a), num, size);
-	ft_make_list(&(head.b), 0, 0);
-	ft_make_list(&(ins->next), 0, 0);
 	temp = ins->next;
 	while (ternary_div(&head, 1, &temp));
-	while (head.a->size != size)
+	while (head.a->size != argc - 1)
 	{
 		if (head.a->next->size)
 			ternary_div(&head, 3, &temp);
