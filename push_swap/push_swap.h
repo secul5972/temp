@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:12:48 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/12 11:00:59 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/12 13:32:16 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef struct	s_list
 {
@@ -40,6 +41,7 @@ typedef struct	s_lpair
 void	l_swap(t_list **f, t_list **s);
 void	i_swap(int *f, int *s);
 int		ft_max(int a, int b);
+long	ft_atoi(const char *str);
 void	ft_make_list(t_list **head, const int *val, const int size);
 void	ft_push(t_list *head, t_list *pop_node, int e_flag);
 t_list	*ft_pop(t_list *head, int e_flag);

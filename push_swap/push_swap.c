@@ -6,34 +6,17 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:08:29 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/12 12:47:31 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/12 14:08:26 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
-#include<stdio.h>
-void print_func(t_lpair *head)
-{
-	t_list *curr = head->a->next;
-	while(curr){
-		printf("%d\n",curr->val);
-			curr = curr->next;
-		}
-	printf("\n\n");
-	curr = head->b->next;
-	while(curr){
-		printf("%d\n",curr->val);
-		curr = curr->next;
-	}
-	printf("\n\n");	
-}
-
-void print_ins(t_list *ins)
+static void	print_ins(t_list *ins)
 {
 	t_list *curr = ins->next;
-	while(curr){
+	while(curr)
+	{
 		if (curr->val == 1)
 			write(1,"sa\n", 3);
 		if (curr->val == 2)
@@ -56,44 +39,64 @@ void print_ins(t_list *ins)
 			write(1,"rrb\n", 4);
 		if (curr->val == 11)
 			write(1,"rrr\n", 4);
-		
 		curr = curr->next;
 	}
 }
+
+int	*input_pre(int argc, char **argv)
+{
+	int		i;
+	long	val;
+	int		*ret;
+
+	ret = 0;
+	if (argc == 1)
+		return (0);
+	i = 1;
+	ret = malloc(sizeof(int)*(argc - 1));
+	if (!ret)
+		return (0);
+	while (argv[i])
+	{
+		val = ft_atoi(argv[i]);
+		if (val>2147483647 || val<-2147483648)
+		{
+			free(ret);
+			return (0);
+		}
+		ret[i - 1] = val;
+		i++;
+	}
+	return (ret);
+}
+
 int main(int argc, char **argv)
 {
 	t_lpair head;
 	t_list	*ins;
 	t_list	*temp;
-	int		i;
+	int		*num;
+	int		size;
 
-	int num[15] = {4,6,8,49,2,5,13,23,1,14,10,46,45,17,11};
-	int num2[10] = {1,2,4,5,3,9,8,84,51,12};
-	int num3[5] = {1,5,2,4,3};
-	int num4[3] = {3,2,1};
-	/*
-	if (argc == 1)
-		write(1, "error\n", 6);
-	*/
-
+	num = input_pre(argc, argv);
+	if (!num)
+	{
+		write(2, "error\n", 6);
+		return (0);
+	}
 	ins = (t_list*)malloc(sizeof(t_list));
-	int size = 15;
+	size = argc - 1;
 	ft_make_list(&(head.a), num, size);
 	ft_make_list(&(head.b), 0, 0);
 	ft_make_list(&(ins->next), 0, 0);
 	temp = ins->next;
-	while (ternary_div(&head, 1, &temp))
-	{
-		print_func(&head);
-	}
+	while (ternary_div(&head, 1, &temp));
 	while (head.a->size != size)
 	{
-		print_func(&head);
 		if (head.a->next->size)
 			ternary_div(&head, 3, &temp);
 		else
 			ternary_div(&head, 2, &temp);
 	}
-	print_func(&head);
 	print_ins(ins);
 }
