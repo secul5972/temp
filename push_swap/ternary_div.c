@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 00:27:03 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/11 14:18:33 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/12 12:34:59 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,8 @@ int	ternary_div(t_lpair *head, int s_flag, t_list **ins)
 		size = init_div(head->b, &pivot, &cnt);
 		next = head->b->next;
 	}
-	if (size < 3)
-		return (les_than_thr(head, s_flag, size, ins));
+	if (size <= 3)
+		return (les_than_four(head, s_flag, size, ins));
 
 	i = size;
 	while (i--)
