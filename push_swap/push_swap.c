@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:08:29 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/13 20:33:10 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/13 20:52:14 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,22 +99,6 @@ int	init(t_lpair *head, int *num, int argc, t_list **ins)
 	return (0);
 }
 
-void print_func(t_lpair *head)
-{
-	t_list *curr = head->a->next;
-	while(curr){
-		printf("%d\n",curr->val);
-			curr = curr->next;
-		}
-	printf("a\n\n");
-	curr = head->b->next;
-	while(curr){
-		printf("%d\n",curr->val);
-		curr = curr->next;
-	}
-	printf("b\n\n");	
-}
-
 int main(int argc, char **argv)
 {
 	t_lpair head;
@@ -134,18 +118,13 @@ int main(int argc, char **argv)
 		return (0);
 	}
 	temp = ins->next;
-	while (ternary_div(&head, 1, &temp)){
-		print_func(&head);
-		print_ins(ins);
-	}
+	while (ternary_div(&head, 1, &temp));
 	while (head.a->size != argc - 1)
 	{
 		if (head.a->next->size)
 			ternary_div(&head, 3, &temp);
 		else
 			ternary_div(&head, 2, &temp);
-		print_func(&head);
-		print_ins(ins);
 	}
 	print_ins(ins);
 }
