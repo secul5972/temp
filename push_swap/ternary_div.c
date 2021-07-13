@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 00:27:03 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/12 12:34:59 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/13 19:59:28 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,15 +65,16 @@ static int	init_div(t_list *head, t_ipair *pivot, t_ipair *cnt)
 	s_idx = f_idx * 2;
 	i = 0;
 	curr = head->next;
+	pivot->first = 0;
+	pivot->second = 0;
 	while(i < size)
 	{
-		if (i == f_idx)
-			pivot->first = curr->val;
-		if (i == s_idx)
-		{
-			pivot->second = curr->val;
+		if (i == f_idx || i == f_idx - 1)
+			pivot->first = ft_max(pivot->first, curr->val);
+		if (i == s_idx || i == s_idx + 1)
+			pivot->second = ft_max(pivot->second, curr->val);
+		if (i == s_idx + 1)
 			break;
-		}
 		curr = curr->next;
 		i++;
 	}
@@ -137,12 +138,17 @@ int	ternary_div(t_lpair *head, int s_flag, t_list **ins)
 		j++;
 	}
 	while (i++ < cnt.first)
+	{
 		r_ins(head, 1, 1, ins);
+		p_ins(head, 2, ins);
+	}
 	while (j++ < cnt.second)
 		r_ins(head, 2, 1, ins);
 	if (cnt.second)
 		head->b->next->size = cnt.second;
-	if ((s_flag == 2 || s_flag == 3) && cnt.first)
+	if (s_flag == 2 && cnt.first)
+		head->b->next->size = cnt.first;
+	if (s_flag == 3 && cnt.first)
 		head->a->next->size = cnt.first;
 	return (1);
 }
