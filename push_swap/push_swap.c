@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:08:29 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/15 20:47:52 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/15 23:46:55 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static void	print_ins(t_list *ins)
 	}
 }
 
-int	*input_pre(int argc, char **argv)
+static int	*input_pre(int argc, char **argv)
 {
 	int		i;
 	long	val;
@@ -51,13 +51,13 @@ int	*input_pre(int argc, char **argv)
 
 	ret = 0;
 	i = 1;
-	ret = malloc(sizeof(int)*(argc - 1));
+	ret = malloc(sizeof(int) * (argc - 1));
 	if (!ret)
 		return (0);
 	while (argv[i])
 	{
 		val = ft_atoi(argv[i]);
-		if (val>2147483647 || val<-2147483648)
+		if (val > 2147483647 || val < -2147483648)
 		{
 			free(ret);
 			return (0);
@@ -68,7 +68,7 @@ int	*input_pre(int argc, char **argv)
 	return (ret);
 }
 
-int	init(t_lpair *head, int *num, int argc, t_list **ins)
+static int	init(t_lpair *head, int *num, int argc, t_list **ins)
 {
 	int i;
 	int j;
@@ -92,19 +92,17 @@ int	init(t_lpair *head, int *num, int argc, t_list **ins)
 	}
 	if (ret)
 		return (ret);
-	*ins = (t_list*)malloc(sizeof(t_list));
-	ft_make_list(&(head->a), num, argc - 1);
-	ft_make_list(&(head->b), 0, 0);
-	ft_make_list(&((*ins)->next), 0, 0);
+	*ins = ft_lalloc(0, 0, 0);
+	(*ins)->next = ft_lalloc(*ins, *ins, 0);
+	head->a = ft_make_list(num, argc - 1);
+	head->b = ft_lalloc(0, 0, 0);
 	free(num);
 	return (0);
 }
-
 int main(int argc, char **argv)
 {
 	t_lpair head;
 	t_list	*ins;
-	t_list	*temp;
 	int		*num;
 	int		ret;
 
@@ -118,14 +116,13 @@ int main(int argc, char **argv)
 			write(2, "Error\n", 6);
 		return (0);
 	}
-	temp = ins->next;
-	while (ternary_div(&head, 1, &temp));
+	while (ternary_div(&head, 1, ins));
 	while (head.a->size != argc - 1)
 	{
 		if (head.a->next->size)
-			ternary_div(&head, 3, &temp);
+			ternary_div(&head, 3, ins);
 		else
-			ternary_div(&head, 2, &temp);
+			ternary_div(&head, 2, ins);
 	}
 	ins_merge(ins);
 	print_ins(ins);

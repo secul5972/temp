@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:38:14 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/15 20:23:14 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/15 22:09:31 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ void	ft_sort(t_list *head, t_ipair *pivot, int size)
 	num = (int*)malloc(sizeof(int)*(size));
 	i = 0;
 	curr = head->next;
-	while(curr)
+	while(i < size)
 	{
 		num[i++] = curr->val;
 		curr = curr->next;
@@ -97,7 +97,7 @@ void	ft_sort(t_list *head, t_ipair *pivot, int size)
 		i++;
 	}
 
-	pivot->first=num[size/3];
-	pivot->second=num[size - size/3 - 1];
+	pivot->first = num[size/3];
+	pivot->second = num[size - size/3 - 1];
 	free(num);
 }

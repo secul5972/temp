@@ -6,14 +6,14 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 00:27:03 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/15 00:11:45 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/15 21:50:06 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 void print_func(t_lpair *head);
 
-static void	small_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list **ins)
+static void	small_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list *ins)
 {
 	if (s_flag == 1 || s_flag == 3)
 		p_ins(head, 2, ins);
@@ -24,7 +24,7 @@ static void	small_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list **ins)
 	}
 }
 
-static void	middle_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list **ins)
+static void	middle_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list *ins)
 {
 	if (s_flag == 1 || s_flag == 3)
 	{
@@ -41,7 +41,7 @@ static void	middle_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list **ins)
 
 }
 
-static void	big_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list **ins)
+static void	big_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list *ins)
 {
 	if (s_flag == 1 || s_flag == 3)
 	{
@@ -65,7 +65,7 @@ static int	init_div(t_list *head, t_ipair *pivot, t_ipair *cnt)
 	return (size);
 }
 
-int	ternary_div(t_lpair *head, int s_flag, t_list **ins)
+int	ternary_div(t_lpair *head, int s_flag, t_list *ins)
 {
 	int		i;
 	int		j;

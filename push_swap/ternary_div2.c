@@ -6,13 +6,13 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 14:11:57 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/14 20:04:26 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/15 21:45:12 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	size_eq_thr_a(t_lpair *head, int s_flag, t_list **ins)
+static void	size_eq_thr_a(t_lpair *head, int s_flag, t_list *ins)
 {
 	int		m_val;
 	t_list	*curr;
@@ -37,7 +37,7 @@ static void	size_eq_thr_a(t_lpair *head, int s_flag, t_list **ins)
 	}
 }
 
-static void	size_eq_thr_b(t_lpair *head, t_list **ins)
+static void	size_eq_thr_b(t_lpair *head, t_list *ins)
 {
 	int		m_val;
 	t_list	*curr;
@@ -61,7 +61,7 @@ static void	size_eq_thr_b(t_lpair *head, t_list **ins)
 	}
 }
 
-int			les_than_four(t_lpair *head, int s_flag, int size, t_list **ins)
+int			les_than_four(t_lpair *head, int s_flag, int size, t_list *ins)
 {
 	if (size == 1)
 	{	

@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 20:08:37 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/15 20:52:19 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/15 21:49:06 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void		ins_merge(t_list *ins)
 	t_list *curr;
 	t_list *next;
 
-	if (ins == 0 || ins->next == 0 || ins->next->next == 0)
+	if (ins->next == 0 || ins->next->next == 0)
 		return ;
 	curr = ins->next;
 	next = curr->next;

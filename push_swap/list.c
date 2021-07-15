@@ -6,41 +6,46 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:37:11 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/15 20:32:26 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/15 21:55:05 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_make_list(t_list **head, const int *val, const int size)
+t_list		*ft_lalloc(t_list *head, t_list *pre, const int val)
 {
-	t_list	*new_node;
+	t_list *ret;
+	
+	ret = (t_list*)malloc(sizeof(t_list));
+	ret->pre = pre;
+	ret->next = 0;
+	ret->end = 0;
+	ret->val = val;
+	ret->size = 0;
+	if (head)
+		head->end = ret;
+	return (ret);
+}
+
+t_list		*ft_make_list(const int *val, const int size)
+{
+	t_list	*head;
 	t_list	*curr;
 	int		i;
 
 	i = 0;
-	*head = (t_list*)malloc(sizeof(t_list));
-	curr = *head;
-	while (i < size){
-		new_node = (t_list*)malloc(sizeof(t_list));
-		new_node->val = val[i++];
-		new_node->pre = curr;
-		new_node->next = 0;
-		new_node->end = 0;
-		new_node->size = 0;
-		curr->next = new_node;
-		curr = new_node;
-	}
-	(*head)->end = curr;
-	(*head)->size = size;
-	if (!size)
+	head = ft_lalloc(0, 0, 0);
+	curr = head;
+	while (i < size)
 	{
-		(*head)->val = 0;
-		(*head)->next = 0;
-		(*head)->end = 0;
+		curr->next = ft_lalloc(0, curr, val[i++]);
+		curr = curr->next;
 	}
+	head->end = curr;
+	head->size = size;
 	if (size > 0)
-		(*head)->next->size = size;
+		head->next->size = size;
+	return (head);
 }
 
 void	ft_push(t_list *head, t_list *pop_node, int e_flag)
@@ -115,7 +120,7 @@ void	all_free(t_lpair *head, t_list *ins)
 		free(curr);
 		curr = next;
 	}
-	curr = ins;
+	curr = ins->next;
 	while(curr){
 		next = curr->next;
 		free(curr);
