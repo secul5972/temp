@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:37:11 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/11 13:29:15 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/15 20:32:26 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,11 @@ void	ft_make_list(t_list **head, const int *val, const int size)
 	(*head)->end = curr;
 	(*head)->size = size;
 	if (!size)
+	{
 		(*head)->val = 0;
+		(*head)->next = 0;
+		(*head)->end = 0;
+	}
 	if (size > 0)
 		(*head)->next->size = size;
 }
@@ -92,4 +96,29 @@ t_list	*ft_pop(t_list *head, int e_flag)
 	}
 	head->size--;
 	return (pop_node);
+}
+
+void	all_free(t_lpair *head, t_list *ins)
+{
+	t_list *curr;
+	t_list *next;
+
+	curr = head->a;
+	while(curr){
+		next = curr->next;
+		free(curr);
+		curr = next;
+	}
+	curr = head->b;
+	while(curr){
+		next = curr->next;
+		free(curr);
+		curr = next;
+	}
+	curr = ins;
+	while(curr){
+		next = curr->next;
+		free(curr);
+		curr = next;
+	}
 }

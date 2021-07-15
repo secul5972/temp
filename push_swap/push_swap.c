@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:08:29 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/14 17:03:21 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/15 20:47:52 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int	init(t_lpair *head, int *num, int argc, t_list **ins)
 	ft_make_list(&(head->a), num, argc - 1);
 	ft_make_list(&(head->b), 0, 0);
 	ft_make_list(&((*ins)->next), 0, 0);
+	free(num);
 	return (0);
 }
 
@@ -126,5 +127,7 @@ int main(int argc, char **argv)
 		else
 			ternary_div(&head, 2, &temp);
 	}
+	ins_merge(ins);
 	print_ins(ins);
+	all_free(&head, ins);
 }

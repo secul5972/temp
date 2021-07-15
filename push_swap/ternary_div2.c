@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 14:11:57 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/13 19:40:04 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/14 20:04:26 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,10 @@ int			les_than_four(t_lpair *head, int s_flag, int size, t_list **ins)
 	}
 	else if (size == 2 && s_flag == 2)
 	{
+		if (head->b->next->val < head->b->next->next->val)
+			s_ins(head, 2, ins);
 		p_ins(head, 1, ins);
 		p_ins(head, 1, ins);
-		if (head->a->next->val > head->a->next->next->val)
-			s_ins(head, 1, ins);
 	}
 	else if (size == 3 && (s_flag == 1 || s_flag == 3))
 		size_eq_thr_a(head, s_flag, ins);

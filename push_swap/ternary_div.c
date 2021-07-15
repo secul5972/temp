@@ -6,11 +6,12 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 00:27:03 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/14 17:01:50 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/15 00:11:45 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+void print_func(t_lpair *head);
 
 static void	small_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list **ins)
 {
@@ -53,35 +54,14 @@ static void	big_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list **ins)
 
 static int	init_div(t_list *head, t_ipair *pivot, t_ipair *cnt)
 {
-	int		f_idx;
-	int		s_idx;
-	int		i;
-	int		size;
-	t_list	*curr;
+	int size;
 
 	size = head->next->size;
 	head->next->size = 0;
-	f_idx = size / 3;
-	s_idx = f_idx * 2;
-	i = 0;
-	curr = head->next;
-	pivot->first = 0;
-	pivot->second = 0;
-	while(i < size)
-	{
-		if (i == f_idx || i == f_idx - 1)
-			pivot->first = ft_max(pivot->first, curr->val);
-		if (i == s_idx || i == s_idx + 1)
-			pivot->second = ft_max(pivot->second, curr->val);
-		if (i == s_idx + 1)
-			break;
-		curr = curr->next;
-		i++;
-	}
+	if (size > 3)
+		ft_sort(head, pivot, size);
 	cnt->first = 0;
 	cnt->second = 0;
-	if (pivot->first > pivot->second)
-		i_swap(&pivot->first, &pivot->second);
 	return (size);
 }
 
@@ -100,7 +80,7 @@ int	ternary_div(t_lpair *head, int s_flag, t_list **ins)
 		size = init_div(head->a, &pivot, &cnt);
 		next = head->a->next;
 	}
-	else if (s_flag == 2)
+	else
 	{
 		size = init_div(head->b, &pivot, &cnt);
 		next = head->b->next;

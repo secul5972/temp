@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ps_instruction.c                                   :+:      :+:    :+:   */
+/*   push_swap_ins.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:08:17 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/11 13:43:36 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/14 23:07:38 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ void	s_ins(t_lpair *head, int h_flag, t_list **ins)
 		(*ins)->val += 2;
 	}
 	ft_make_list(&((*ins)->next), 0, 0);
+	(*ins)->next->pre = (*ins);
 	(*ins) = (*ins)->next;
 }
 
@@ -42,6 +43,10 @@ void	p_ins(t_lpair *head, int h_flag, t_list **ins)
 	t_list *push_head;
 	t_list *pop_head;
 	
+	if (h_flag == 1 && head->b->size == 0)
+		return ;
+	if (h_flag == 2 && head->a->size == 0)
+		return ;
 	push_head = head->a;
 	pop_head = head->b;
 	if (h_flag == 1)
@@ -59,6 +64,10 @@ void	p_ins(t_lpair *head, int h_flag, t_list **ins)
 
 void	r_ins(t_lpair *head, int h_flag, int rev_flag, t_list **ins)
 {
+	if (h_flag == 1 && head->a->size == 1)
+		return ;
+	if (h_flag == 2 && head->b->size == 1)
+		return ;
 	if (rev_flag == 0)
 	{
 		if (h_flag & 1)
@@ -90,6 +99,7 @@ void	r_ins(t_lpair *head, int h_flag, int rev_flag, t_list **ins)
 		}
 	}
 	ft_make_list(&((*ins)->next), 0, 0);
+	(*ins)->next->pre = (*ins);
 	(*ins) = (*ins)->next;
 }
 

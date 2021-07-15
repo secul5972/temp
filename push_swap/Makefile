@@ -6,7 +6,7 @@
 #    By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/12 14:12:53 by seungcoh          #+#    #+#              #
-#    Updated: 2021/07/12 14:16:47 by seungcoh         ###   ########.fr        #
+#    Updated: 2021/07/14 20:55:50 by seungcoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,8 @@ SRCS = push_swap.c\
        ternary_div2.c\
        list.c\
        push_swap_ins.c\
-       push_swap_utils.c
+       push_swap_utils.c\
+       ins_merge.c
 OBJS = $(SRCS:.c=.o)
 
 all: 		$(NAME)
