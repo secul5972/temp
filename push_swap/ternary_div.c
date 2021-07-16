@@ -6,18 +6,17 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 00:27:03 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/15 21:50:06 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/16 22:39:21 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-void print_func(t_lpair *head);
 
 static void	small_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list *ins)
 {
 	if (s_flag == 1 || s_flag == 3)
 		p_ins(head, 2, ins);
-	else if(s_flag == 2)
+	else if (s_flag == 2)
 	{
 		r_ins(head, 2, 0, ins);
 		cnt->second++;
@@ -38,7 +37,6 @@ static void	middle_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list *ins)
 		r_ins(head, 1, 0, ins);
 		cnt->first++;
 	}
-
 }
 
 static void	big_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list *ins)
@@ -48,13 +46,13 @@ static void	big_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list *ins)
 		r_ins(head, 1, 0, ins);
 		cnt->first++;
 	}
-	else if(s_flag == 2)
+	else if (s_flag == 2)
 		p_ins(head, 1, ins);
 }
 
 static int	init_div(t_list *head, t_ipair *pivot, t_ipair *cnt)
 {
-	int size;
+	int	size;
 
 	size = head->next->size;
 	head->next->size = 0;
@@ -87,7 +85,6 @@ int	ternary_div(t_lpair *head, int s_flag, t_list *ins)
 	}
 	if (size <= 3)
 		return (les_than_four(head, s_flag, size, ins));
-
 	i = size;
 	while (i--)
 	{
@@ -124,7 +121,7 @@ int	ternary_div(t_lpair *head, int s_flag, t_list *ins)
 		r_ins(head, 2, 1, ins);
 	if (cnt.second)
 		head->b->next->size = cnt.second;
-	while((s_flag == 2) && (i++ < cnt.first))
+	while ((s_flag == 2) && (i++ < cnt.first))
 		if (s_flag == 2)
 			p_ins(head, 2, ins);
 	if (s_flag == 2 && cnt.first)

@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:38:14 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/15 22:09:31 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/16 22:56:53 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	l_swap(t_list **f, t_list **s)
 {
-	t_list *temp;
-	
+	t_list	*temp;
+
 	temp = *f;
 	*f = *s;
 	*s = temp;
@@ -24,13 +24,13 @@ void	l_swap(t_list **f, t_list **s)
 void	i_swap(int *f, int *s)
 {
 	int	temp;
-	
+
 	temp = *f;
 	*f = *s;
 	*s = temp;
 }
 
-int		ft_max(int a, int b)
+int	ft_max(int a, int b)
 {
 	if (a > b)
 		return (a);
@@ -38,7 +38,7 @@ int		ft_max(int a, int b)
 		return (b);
 }
 
-long	ft_atoi(const char *str)
+long	ft_atoi(const char *s)
 {
 	size_t	i;
 	long	ret;
@@ -49,16 +49,15 @@ long	ft_atoi(const char *str)
 	m_flag = 0;
 	flag = 1;
 	ret = 0;
-	while (str[i] == 9 || str[i] == 10 || str[i] == 11
-	|| str[i] == 12 || str[i] == 13 || str[i] == 32)
+	while (s[i] == 9 || s[i] == 10 || s[i] == 11 \
+	|| s[i] == 12 || s[i] == 13 || s[i] == 32)
 		i++;
-	if (str[i] == '+' || str[i] == '-')
-		m_flag = str[i++] - '+';
-	while ('0' <= str[i] && str[i] <= '9')
+	if (s[i] == '+' || s[i] == '-')
+		m_flag = s[i++] - '+';
+	while ('0' <= s[i] && s[i] <= '9')
 	{
 		ret *= 10;
-		ret += str[i] - '0';
-		i++;
+		ret += s[i++] - '0';
 		flag = 0;
 	}
 	if (m_flag != 0)
@@ -75,29 +74,24 @@ void	ft_sort(t_list *head, t_ipair *pivot, int size)
 	int		j;
 	t_list	*curr;
 
-	num = (int*)malloc(sizeof(int)*(size));
+	num = (int *)malloc(sizeof(int) * size);
 	i = 0;
 	curr = head->next;
-	while(i < size)
+	while (i < size)
 	{
 		num[i++] = curr->val;
 		curr = curr->next;
 	}
 	curr = head->next;
-	i = 0;
-	while(i < size)
+	i = -1;
+	while (++i < size)
 	{
-		j = i + 1;
-		while(j < size)
-		{
+		j = i;
+		while (++j < size)
 			if (num[i] > num[j])
 				i_swap(num + i, num + j);
-			j++;
-		}
-		i++;
 	}
-
-	pivot->first = num[size/3];
-	pivot->second = num[size - size/3 - 1];
+	pivot->first = num[size / 3];
+	pivot->second = num[size - size / 3 - 1];
 	free(num);
 }

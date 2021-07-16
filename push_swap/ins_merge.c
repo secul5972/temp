@@ -6,83 +6,81 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 20:08:37 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/15 21:49:06 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/16 23:11:04 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	ins_del(t_list **curr, int val)
+static void	ins_del(t_list **c, int val)
 {
-	t_list *temp;
-	t_list *next;
-	
-	temp = (*curr);
-	next = (*curr)->next;
-	if(val > 0)
+	t_list	*temp;
+	t_list	*next;
+
+	temp = (*c);
+	next = (*c)->next;
+	if (val > 0)
 	{
-		(*curr)->val = val;
-		(*curr)->next = next->next;
-		next->next->pre = (*curr);
-		(*curr) = (*curr)->pre;
+		(*c)->val = val;
+		(*c)->next = next->next;
+		next->next->pre = (*c);
+		(*c) = (*c)->pre;
 		free(next);
 	}
 	else
 	{
-		(*curr)->pre->next = next->next;
-		next->next->pre = (*curr)->pre;
-		(*curr) = (*curr)->pre->pre;
+		(*c)->pre->next = next->next;
+		next->next->pre = (*c)->pre;
+		(*c) = (*c)->pre->pre;
 		free(temp);
 		free(next);
 	}
 }
 
-void		ins_merge(t_list *ins)
+void	ins_merge(t_list *ins)
 {
-	t_list *curr;
-	t_list *next;
+	t_list	*c;
+	t_list	*n;
 
 	if (ins->next == 0 || ins->next->next == 0)
 		return ;
-	curr = ins->next;
-	next = curr->next;
-	while (next)
+	c = ins->next;
+	n = c->next;
+	while (n)
 	{
-		if ((curr->val == 1 && next->val == 2) || (curr->val == 2 && next->val == 1))
-			ins_del(&curr, 3);
-		else if ((curr->val == 6 && next->val == 7) || (curr->val == 7 && next->val == 6))
-			ins_del(&curr, 8);
-		else if ((curr->val == 9 && next->val == 10) || (curr->val == 10 && next->val == 9))
-			ins_del(&curr, 11);
-		else if ((curr->val == 4 && next->val == 5) || (curr->val == 5 && next->val == 4))
-			ins_del(&curr, 0);
-		else if ((curr->val == 6 && next->val == 9) || (curr->val == 9 && next->val == 6))
-			ins_del(&curr, 0);
-		else if ((curr->val == 7 && next->val == 10) || (curr->val == 10 && next->val == 7))
-			ins_del(&curr, 0);
-		else if ((curr->val == 8 && next->val == 11) || (curr->val == 11 && next->val == 8))
-			ins_del(&curr, 0);
-		curr = curr->next;
-		next = curr->next;
+		if ((c->val == 1 && n->val == 2) || (c->val == 2 && n->val == 1))
+			ins_del(&c, 3);
+		else if ((c->val == 6 && n->val == 7) || (c->val == 7 && n->val == 6))
+			ins_del(&c, 8);
+		else if ((c->val == 9 && n->val == 10) || (c->val == 10 && n->val == 9))
+			ins_del(&c, 11);
+		else if ((c->val == 4 && n->val == 5) || (c->val == 5 && n->val == 4))
+			ins_del(&c, 0);
+		else if ((c->val == 6 && n->val == 9) || (c->val == 9 && n->val == 6))
+			ins_del(&c, 0);
+		else if ((c->val == 7 && n->val == 10) || (c->val == 10 && n->val == 7))
+			ins_del(&c, 0);
+		else if ((c->val == 8 && n->val == 11) || (c->val == 11 && n->val == 8))
+			ins_del(&c, 0);
+		c = c->next;
+		n = c->next;
 	}
-
 	if (ins->next == 0 || ins->next->next == 0 || ins->next->next->next == 0 || ins->next->next->next->next == 0)
 		return ;
-	curr = ins->next;
-	next = curr->next;
-
-	while(curr->next->next->next)
+	c = ins->next;
+	n = c->next;
+	while (c->next->next->next)
 	{
-		if(curr->val==7 && next->val==5 && next->next->val ==10 && next->next->next->val == 2)
+		if (c->val == 7 && n->val == 5 && n->next->val == 10 && n->next->next->val == 2)
 		{
-			curr->val=5;
-			curr->next=next->next->next->next;
-			free(next->next->next);
-			free(next->next);
-			free(next);
+			c->val = 5;
+			c->next = n->next->next->next;
+			free(n->next->next);
+			free(n->next);
+			free(n);
 		}
 		else
-			curr = curr->next;
-		next = curr->next;
+			c = c->next;
+		n = c->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 14:11:57 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/15 21:45:12 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/16 22:46:14 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ static void	size_eq_thr_a(t_lpair *head, int s_flag, t_list *ins)
 	t_list	*curr;
 
 	curr = head->a;
-	m_val = ft_max(curr->next->next->next->val\
-	, ft_max(curr->next->val, curr->next->next->val));
+	m_val = ft_max(curr->next->val, curr->next->next->val);
+	m_val = ft_max(m_val, curr->next->next->next->val);
 	if (m_val == curr->next->val && s_flag == 1)
 		r_ins(head, 1, 0, ins);
-	if (m_val == curr->next->next->val && s_flag ==1)
+	if (m_val == curr->next->next->val && s_flag == 1)
 		r_ins(head, 1, 1, ins);
 	if (curr->next->next->next->val == m_val)
 		les_than_four(head, s_flag, 2, ins);
@@ -43,8 +43,8 @@ static void	size_eq_thr_b(t_lpair *head, t_list *ins)
 	t_list	*curr;
 
 	curr = head->b;
-	m_val = ft_max(curr->next->next->next->val\
-	, ft_max(curr->next->val, curr->next->next->val));
+	m_val = ft_max(curr->next->val, curr->next->next->val);
+	m_val = ft_max(m_val, curr->next->next->next->val);
 	if (m_val == curr->next->next->next->val)
 	{
 		r_ins(head, 2, 0, ins);
@@ -61,7 +61,7 @@ static void	size_eq_thr_b(t_lpair *head, t_list *ins)
 	}
 }
 
-int			les_than_four(t_lpair *head, int s_flag, int size, t_list *ins)
+int	les_than_four(t_lpair *head, int s_flag, int size, t_list *ins)
 {
 	if (size == 1)
 	{	
