@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:38:14 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/16 22:56:53 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 01:13:30 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	ft_sort(t_list *head, t_ipair *pivot, int size)
 			if (num[i] > num[j])
 				i_swap(num + i, num + j);
 	}
-	pivot->first = num[size / 3];
+	pivot->first = num[size / 3 + 1];
 	pivot->second = num[size - size / 3 - 1];
 	free(num);
 }
