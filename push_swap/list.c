@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:37:11 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 18:14:43 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 18:27:25 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ void	all_free(t_lpair *head, t_list *ins)
 		free(curr);
 		curr = next;
 	}
-	curr = ins->next;
+	curr = ins;
 	while (curr)
 	{
 		next = curr->next;
