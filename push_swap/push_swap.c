@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:08:29 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 18:03:36 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 18:22:46 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,49 +53,44 @@ static void	print_ins(t_list *ins)
 static int	input_pre(t_list *head, int argc, char **argv)
 {
 	int		i;
-	int		ret;
 	int		flag;
 	long	val;
 	char	*temp;
 
 	i = 0;
-	ret = 0;
 	if (argc == 1)
 		return (2);
 	while (argv[++i])
 	{
 		temp = argv[i];
 		flag = 1;
-		while (*temp){
+		while (*temp)
+		{
 			val = ft_atoi(&temp);
-			if (val > 2147483647 || val < -2147483648)
-			{
-				if (flag)
-					return (1);
-				else
-					continue;
-			}
+			if (flag && (val > 2147483647 || val < -2147483648))
+				return (1);
+			if (!flag && (val > 2147483647 || val < -2147483648))
+				continue ;
 			head->end->next = ft_lalloc(head, head->end, val);
-			head->size++;
 			flag = 0;
 		}
 	}
 	head->next->size = head->size;
-	return (ret);
+	return (2);
 }
 
 static int	init(t_lpair *head, int argc, char **argv, t_list **ins)
 {
 	t_list	*i;
 	t_list	*j;
-	int	flag;
+	int		flag;
 
 	init_mal(head, argc, ins);
 	if (!(*ins) || !(head->a) || !(head->b))
 		return (2);
 	flag = input_pre(head->a, argc, argv);
 	i = head->a->next;
-	while (i)
+	while (flag != 1 && i)
 	{
 		j = i->next;
 		while (j)
@@ -128,8 +123,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	while (ternary_div(&head, 1, ins))
-	{
-	}
+		ret = 0;
 	while (head.b->size)
 	{
 		if (head.a->next->size)

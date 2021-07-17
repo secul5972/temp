@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:37:11 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 17:08:15 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 18:14:43 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,10 @@ t_list	*ft_lalloc(t_list *head, t_list *pre, const int val)
 	ret->val = val;
 	ret->size = 0;
 	if (head)
+	{
 		head->end = ret;
+		head->size++;
+	}
 	return (ret);
 }
 
