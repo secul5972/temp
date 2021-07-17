@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:38:14 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 01:13:30 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 14:42:48 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,11 @@ long	ft_atoi(const char *s)
 
 void	ft_sort(t_list *head, t_ipair *pivot, int size)
 {
-	int		*num;
+	int		num[1000000];
 	int		i;
 	int		j;
 	t_list	*curr;
 
-	num = (int *)malloc(sizeof(int) * size);
 	i = 0;
 	curr = head->next;
 	while (i < size)
@@ -93,5 +92,4 @@ void	ft_sort(t_list *head, t_ipair *pivot, int size)
 	}
 	pivot->first = num[size / 3 + 1];
 	pivot->second = num[size - size / 3 - 1];
-	free(num);
 }
