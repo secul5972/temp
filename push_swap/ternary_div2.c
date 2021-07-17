@@ -6,11 +6,53 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/10 14:11:57 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/16 22:46:14 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 11:58:48 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	size_con1(t_lpair *head, int s_flag, int size, t_ipair *cnt)
+{	
+	if ((s_flag == 1 || s_flag == 3) && (size - cnt->first - cnt->second))
+		head->b->next->size = size - cnt->first - cnt->second;
+	if (s_flag == 1 && cnt->first)
+	{
+		head->a->next->size = cnt->first;
+		cnt->first = 0;
+	}
+	if (s_flag == 2 && (size - cnt->first - cnt->second))
+		head->a->next->size = size - cnt->first - cnt->second;
+}
+
+void	size_con2(t_lpair *head, int s_flag, t_list *ins, t_ipair cnt)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = 0;
+	while (i < cnt.first && j < cnt.second)
+	{
+		r_ins(head, 3, 1, ins);
+		i++;
+		j++;
+	}
+	while (i++ < cnt.first)
+		r_ins(head, 1, 1, ins);
+	i = 0;
+	while (j++ < cnt.second)
+		r_ins(head, 2, 1, ins);
+	if (cnt.second)
+		head->b->next->size = cnt.second;
+	while ((s_flag == 2) && (i++ < cnt.first))
+		if (s_flag == 2)
+			p_ins(head, 2, ins);
+	if (s_flag == 2 && cnt.first)
+		head->b->next->size = cnt.first;
+	if (s_flag == 3 && cnt.first)
+		head->a->next->size = cnt.first;
+}
 
 static void	size_eq_thr_a(t_lpair *head, int s_flag, t_list *ins)
 {
