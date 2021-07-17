@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:08:17 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 12:48:51 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 15:06:06 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ void	s_ins(t_lpair *head, int h_flag, t_list *ins)
 		ft_push(head->b, s_node, 0);
 		ins->end->val += 2;
 	}
-	ins->end->next = ft_lalloc(ins, ins->end, 0);
+	ins->end = ins->end->next;
+	ins->size++;
 }
 
 void	p_ins(t_lpair *head, int h_flag, t_list *ins)
@@ -55,7 +56,8 @@ void	p_ins(t_lpair *head, int h_flag, t_list *ins)
 		ins->end->val = 5;
 	}
 	ft_push(push_head, ft_pop(pop_head, 0), 0);
-	ins->end->next = ft_lalloc(ins, ins->end, 0);
+	ins->end = ins->end->next;
+	ins->size++;
 }
 
 static void	rr_ins(t_lpair *head, int h_flag, t_list *ins)
@@ -97,5 +99,6 @@ void	r_ins(t_lpair *head, int h_flag, int rev_flag, t_list *ins)
 	}
 	else if (rev_flag == 1)
 		rr_ins(head, h_flag, ins);
-	ins->end->next = ft_lalloc(ins, ins->end, 0);
+	ins->end = ins->end->next;
+	ins->size++;
 }

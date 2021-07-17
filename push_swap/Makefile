@@ -6,7 +6,7 @@
 #    By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/07/12 14:12:53 by seungcoh          #+#    #+#              #
-#    Updated: 2021/07/14 20:55:50 by seungcoh         ###   ########.fr        #
+#    Updated: 2021/07/17 14:55:31 by seungcoh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CFLAGS = -Wall -Wextra -Werror
 
 NAME = push_swap
 SRCS = push_swap.c\
+       push_swap2.c\
        ternary_div.c\
        ternary_div2.c\
        list.c\

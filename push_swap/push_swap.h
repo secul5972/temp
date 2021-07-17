@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:12:48 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 12:53:21 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 14:55:17 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,5 @@ int		ternary_div(t_lpair *head, int s_flag, t_list *ins);
 void	ins_merge2(t_list *ins);
 void	ins_merge(t_list *ins);
 
+int		init_mal(t_lpair *head, int *num, int argc, t_list **ins);
 #endif

@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:08:29 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 12:57:39 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 14:54:44 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ static int	*input_pre(int argc, char **argv, int *flag, int *idx)
 		ret = malloc(sizeof(int) * (argc - 1));
 	else
 		ret = 0;
+	if (!ret && argc > 1)
+		return (ret);
 	while (argv[++i])
 	{
 		val = ft_atoi(argv[i]);
@@ -97,13 +99,12 @@ static int	init(t_lpair *head, int argc, char **argv, t_list **ins)
 		}
 	}
 	if (flag)
+	{
+		if (num)
+			free(num);
 		return (flag);
-	*ins = ft_lalloc(0, 0, 0);
-	(*ins)->next = ft_lalloc(*ins, *ins, 0);
-	head->a = ft_make_list(num, argc - 1);
-	head->b = ft_lalloc(0, 0, 0);
-	free(num);
-	return (0);
+	}
+	return (init_mal(head, num, argc, ins));
 }
 
 int	main(int argc, char **argv)
