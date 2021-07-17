@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:12:48 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 17:08:40 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/18 03:47:54 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ void	l_swap(t_list **f, t_list **s);
 void	i_swap(int *f, int *s);
 int		ft_max(int a, int b);
 long	ft_atoi(char **str);
-void	ft_sort(t_list *head, t_ipair *pivot, int size);
+int		ft_sort_int(t_list *head, t_ipair *pivot, int size);
+int		ft_sort_stack(t_lpair *head, t_list *ins);
 
 t_list	*ft_lalloc(t_list *head, t_list *pre, const int val);
 t_list	*ft_make_list(int size);
@@ -55,6 +56,7 @@ void	r_ins(t_lpair *head, int h_flag, int rev_flag, t_list *ins);
 
 void	size_con1(t_lpair *head, int s_flag, int size, t_ipair *cnt);
 void	size_con2(t_lpair *head, int s_flag, t_list *ins, t_ipair cnt);
+void	init_div2(int *size, t_list *next, int *i);
 int		les_than_four(t_lpair *head, int s_flag, int size, t_list *ins);
 int		ternary_div(t_lpair *head, int s_flag, t_list *ins);
 void	ins_merge2(t_list *ins);

@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 00:27:03 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 12:44:10 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/18 03:47:19 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ t_ipair *pivot, t_ipair *cnt)
 	else
 		curr = head->b;
 	if (curr->next->size > 3)
-		ft_sort(curr, pivot, curr->next->size);
+		if (!ft_sort_int(curr, pivot, curr->next->size))
+			return (0);
 	cnt->first = 0;
 	cnt->second = 0;
 	return (curr->next);
@@ -86,11 +87,11 @@ int	ternary_div(t_lpair *head, int s_flag, t_list *ins)
 	t_list	*next;
 
 	next = init_div(head, s_flag, &pivot, &cnt);
-	size = next->size;
-	next->size = 0;
+	if (!next)
+		return (-1);
+	init_div2(&size, next, &i);
 	if (size <= 3)
 		return (les_than_four(head, s_flag, size, ins));
-	i = size;
 	while (i--)
 	{
 		if (next->val < pivot.first)
@@ -102,5 +103,5 @@ int	ternary_div(t_lpair *head, int s_flag, t_list *ins)
 	}
 	size_con1(head, s_flag, size, &cnt);
 	size_con2(head, s_flag, ins, cnt);
-	return (1);
+	return (0);
 }

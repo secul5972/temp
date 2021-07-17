@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:08:29 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 18:22:46 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/18 03:33:52 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,16 +120,13 @@ int	main(int argc, char **argv)
 		if (ret != 2)
 			write(2, "Error\n", 6);
 		all_free(&head, ins);
-		return (0);
+		return (-1);
 	}
-	while (ternary_div(&head, 1, ins))
-		ret = 0;
-	while (head.b->size)
+	ret = ft_sort_stack(&head, ins);
+	if (!ret)
 	{
-		if (head.a->next->size)
-			ternary_div(&head, 3, ins);
-		else
-			ternary_div(&head, 2, ins);
+		all_free(&head, ins);
+		return (-1);
 	}
 	ins_merge(ins->next);
 	ins_merge2(ins->next);

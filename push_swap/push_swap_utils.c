@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:38:14 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 16:14:47 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/18 03:33:24 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,6 @@ void	i_swap(int *f, int *s)
 	temp = *f;
 	*f = *s;
 	*s = temp;
-}
-
-int	ft_max(int a, int b)
-{
-	if (a > b)
-		return (a);
-	else
-		return (b);
 }
 
 long	ft_atoi(char **s)
@@ -65,21 +57,34 @@ long	ft_atoi(char **s)
 	return (ret);
 }
 
-void	ft_sort(t_list *head, t_ipair *pivot, int size)
+static int	*cpy_list(t_list *head, int size)
 {
-	int		num[1000000];
+	int		*num;
 	int		i;
-	int		j;
 	t_list	*curr;
 
 	i = 0;
 	curr = head->next;
+	num = (int *)malloc(sizeof(int) * size);
+	if (!num)
+		return (0);
 	while (i < size)
 	{
 		num[i++] = curr->val;
 		curr = curr->next;
 	}
-	curr = head->next;
+	return (num);
+}
+
+int	ft_sort_int(t_list *head, t_ipair *pivot, int size)
+{
+	int		*num;
+	int		i;
+	int		j;
+
+	num = cpy_list(head, size);
+	if (!num)
+		return (0);
 	i = -1;
 	while (++i < size)
 	{
@@ -90,4 +95,6 @@ void	ft_sort(t_list *head, t_ipair *pivot, int size)
 	}
 	pivot->first = num[size / 3 + 1];
 	pivot->second = num[size - size / 3 - 1];
+	free(num);
+	return (1);
 }
