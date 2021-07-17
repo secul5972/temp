@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:37:11 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/16 23:01:42 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 17:08:15 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,24 +27,30 @@ t_list	*ft_lalloc(t_list *head, t_list *pre, const int val)
 	return (ret);
 }
 
-t_list	*ft_make_list(const int *val, const int size)
+t_list	*ft_make_list(int size)
 {
 	t_list	*head;
 	t_list	*curr;
-	int		i;
 
-	i = 0;
 	head = ft_lalloc(0, 0, 0);
 	curr = head;
-	while (i < size)
+	while (size--)
 	{
-		curr->next = ft_lalloc(0, curr, val[i++]);
+		curr->next = ft_lalloc(0, curr, 0);
+		if (!(curr->next))
+		{
+			curr = head;
+			while (curr)
+			{
+				curr = head->next;
+				free(head);
+				head = curr;
+			}
+			return (0);
+		}
 		curr = curr->next;
 	}
-	head->end = curr;
-	head->size = size;
-	if (size > 0)
-		head->next->size = size;
+	head->end = head->next;
 	return (head);
 }
 

@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:08:29 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 14:54:44 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 18:03:36 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,61 +50,67 @@ static void	print_ins(t_list *ins)
 	}
 }
 
-static int	*input_pre(int argc, char **argv, int *flag, int *idx)
+static int	input_pre(t_list *head, int argc, char **argv)
 {
 	int		i;
+	int		ret;
+	int		flag;
 	long	val;
-	int		*ret;
+	char	*temp;
 
 	i = 0;
-	*idx = -1;
-	*flag = 2;
-	if (argc > 1)
-		ret = malloc(sizeof(int) * (argc - 1));
-	else
-		ret = 0;
-	if (!ret && argc > 1)
-		return (ret);
+	ret = 0;
+	if (argc == 1)
+		return (2);
 	while (argv[++i])
 	{
-		val = ft_atoi(argv[i]);
-		if (val > 2147483647 || val < -2147483648)
-		{
-			free(ret);
-			*flag = 1;
-			return (0);
+		temp = argv[i];
+		flag = 1;
+		while (*temp){
+			val = ft_atoi(&temp);
+			if (val > 2147483647 || val < -2147483648)
+			{
+				if (flag)
+					return (1);
+				else
+					continue;
+			}
+			head->end->next = ft_lalloc(head, head->end, val);
+			head->size++;
+			flag = 0;
 		}
-		ret[i - 1] = val;
 	}
+	head->next->size = head->size;
 	return (ret);
 }
 
 static int	init(t_lpair *head, int argc, char **argv, t_list **ins)
 {
-	int	i;
-	int	j;
+	t_list	*i;
+	t_list	*j;
 	int	flag;
-	int	*num;
 
-	num = input_pre(argc, argv, &flag, &i);
-	while (num && (++i < (argc - 1)))
+	init_mal(head, argc, ins);
+	if (!(*ins) || !(head->a) || !(head->b))
+		return (2);
+	flag = input_pre(head->a, argc, argv);
+	i = head->a->next;
+	while (i)
 	{
-		j = i;
-		while (++j < (argc - 1))
+		j = i->next;
+		while (j)
 		{
-			if (num[i] == num[j])
+			if (i->val == j->val)
 				return (1);
-			if (num[i] > num[j])
+			if (i->val > j->val)
 				flag = 0;
+			j = j->next;
 		}
+		i = i->next;
 	}
 	if (flag)
-	{
-		if (num)
-			free(num);
 		return (flag);
-	}
-	return (init_mal(head, num, argc, ins));
+	return (0);
 }
 
 int	main(int argc, char **argv)
@@ -118,12 +124,13 @@ int	main(int argc, char **argv)
 	{
 		if (ret != 2)
 			write(2, "Error\n", 6);
+		all_free(&head, ins);
 		return (0);
 	}
 	while (ternary_div(&head, 1, ins))
 	{
 	}
-	while (head.a->size != argc - 1)
+	while (head.b->size)
 	{
 		if (head.a->next->size)
 			ternary_div(&head, 3, ins);

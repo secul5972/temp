@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:12:48 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 14:55:17 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 17:08:40 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ typedef struct s_lpair
 void	l_swap(t_list **f, t_list **s);
 void	i_swap(int *f, int *s);
 int		ft_max(int a, int b);
-long	ft_atoi(const char *str);
+long	ft_atoi(char **str);
 void	ft_sort(t_list *head, t_ipair *pivot, int size);
 
 t_list	*ft_lalloc(t_list *head, t_list *pre, const int val);
-t_list	*ft_make_list(const int *val, const int size);
+t_list	*ft_make_list(int size);
 void	ft_push(t_list *head, t_list *pop_node, int e_flag);
 t_list	*ft_pop(t_list *head, int e_flag);
 void	all_free(t_lpair *head, t_list *ins);
@@ -60,5 +60,5 @@ int		ternary_div(t_lpair *head, int s_flag, t_list *ins);
 void	ins_merge2(t_list *ins);
 void	ins_merge(t_list *ins);
 
-int		init_mal(t_lpair *head, int *num, int argc, t_list **ins);
+void	init_mal(t_lpair *head, int argc, t_list **ins);
 #endif

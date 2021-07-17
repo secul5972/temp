@@ -6,46 +6,28 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 14:50:04 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 15:12:47 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 17:34:54 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static t_list	*mal_ins(int size)
+void	init_mal(t_lpair *head, int argc, t_list **ins)
 {
-	t_list	*head;
-	t_list	*curr;
+	double	log3;
+	int		digit;
+	int		size;
 
-	head = ft_lalloc(0, 0, 0);
-	curr = head;
-	while (size--)
+	log3 = 0.477121255;
+	digit = 0;
+	size = argc - 1;
+	while (size)
 	{
-		curr->next = ft_lalloc(0, curr, 0);
-		if (!(curr->next))
-		{
-			curr = head;
-			while (curr)
-			{
-				curr = head->next;
-				free(head);
-				head = curr;
-			}
-			return (0);
-		}
-		curr = curr->next;
+		size /= 10;
+		digit++;
 	}
-	head->end = head->next;
-	return (head);
-}
-
-int	init_mal(t_lpair *head, int *num, int argc, t_list **ins)
-{
-	*ins = mal_ins(150000);
-	head->a = ft_make_list(num, argc - 1);
+	*ins = ft_make_list(((int)((double)digit / log3) + 1) * 5 / 3 * (argc - 1));
+	head->a = ft_lalloc(0, 0, 0);
+	head->a->end = head->a;
 	head->b = ft_lalloc(0, 0, 0);
-	free(num);
-	if (!(*ins) || !(head->a) || !(head->b))
-		return (2);
-	return (0);
 }

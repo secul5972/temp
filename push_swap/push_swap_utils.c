@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:38:14 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 14:42:48 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 16:14:47 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,26 +38,24 @@ int	ft_max(int a, int b)
 		return (b);
 }
 
-long	ft_atoi(const char *s)
+long	ft_atoi(char **s)
 {
-	size_t	i;
 	long	ret;
 	int		m_flag;
 	int		flag;
 
-	i = 0;
 	m_flag = 0;
 	flag = 1;
 	ret = 0;
-	while (s[i] == 9 || s[i] == 10 || s[i] == 11 \
-	|| s[i] == 12 || s[i] == 13 || s[i] == 32)
-		i++;
-	if (s[i] == '+' || s[i] == '-')
-		m_flag = s[i++] - '+';
-	while ('0' <= s[i] && s[i] <= '9')
+	while (**s == 9 || **s == 10 || **s == 11 \
+	|| **s == 12 || **s == 13 || **s == 32)
+		(*s)++;
+	if (**s == '+' || **s == '-')
+		m_flag = *(*s)++ - '+';
+	while ('0' <= **s && **s <= '9')
 	{
 		ret *= 10;
-		ret += s[i++] - '0';
+		ret += *(*s)++ - '0';
 		flag = 0;
 	}
 	if (m_flag != 0)
