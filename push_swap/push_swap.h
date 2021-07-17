@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:12:48 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 11:56:36 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 12:53:21 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	size_con1(t_lpair *head, int s_flag, int size, t_ipair *cnt);
 void	size_con2(t_lpair *head, int s_flag, t_list *ins, t_ipair cnt);
 int		les_than_four(t_lpair *head, int s_flag, int size, t_list *ins);
 int		ternary_div(t_lpair *head, int s_flag, t_list *ins);
+void	ins_merge2(t_list *ins);
 void	ins_merge(t_list *ins);
 
 #endif

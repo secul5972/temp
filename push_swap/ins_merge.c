@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/14 20:08:37 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/16 23:11:04 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 12:56:49 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,37 @@ static void	ins_del(t_list **c, int val)
 	}
 }
 
-void	ins_merge(t_list *ins)
+void	ins_merge2(t_list *c)
 {
-	t_list	*c;
 	t_list	*n;
 
-	if (ins->next == 0 || ins->next->next == 0)
+	if (c == 0 || c->next == 0 || \
+	c->next->next == 0 || c->next->next->next == 0)
 		return ;
-	c = ins->next;
+	n = c->next;
+	while (c->next->next->next)
+	{
+		if (c->val == 7 && n->val == 5 && \
+		n->next->val == 10 && n->next->next->val == 2)
+		{
+			c->val = 5;
+			c->next = n->next->next->next;
+			free(n->next->next);
+			free(n->next);
+			free(n);
+		}
+		else
+			c = c->next;
+		n = c->next;
+	}
+}
+
+void	ins_merge(t_list *c)
+{
+	t_list	*n;
+
+	if (c == 0 || c->next == 0)
+		return ;
 	n = c->next;
 	while (n)
 	{
@@ -63,24 +86,6 @@ void	ins_merge(t_list *ins)
 		else if ((c->val == 8 && n->val == 11) || (c->val == 11 && n->val == 8))
 			ins_del(&c, 0);
 		c = c->next;
-		n = c->next;
-	}
-	if (ins->next == 0 || ins->next->next == 0 || ins->next->next->next == 0 || ins->next->next->next->next == 0)
-		return ;
-	c = ins->next;
-	n = c->next;
-	while (c->next->next->next)
-	{
-		if (c->val == 7 && n->val == 5 && n->next->val == 10 && n->next->next->val == 2)
-		{
-			c->val = 5;
-			c->next = n->next->next->next;
-			free(n->next->next);
-			free(n->next);
-			free(n);
-		}
-		else
-			c = c->next;
 		n = c->next;
 	}
 }

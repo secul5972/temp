@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:08:17 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/16 22:47:13 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 12:48:51 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,22 @@ void	p_ins(t_lpair *head, int h_flag, t_list *ins)
 	ins->end->next = ft_lalloc(ins, ins->end, 0);
 }
 
+static void	rr_ins(t_lpair *head, int h_flag, t_list *ins)
+{	
+	if (h_flag & 1)
+	{
+		ft_push(head->a, ft_pop(head->a, 1), 0);
+		ins->end->val = 9;
+	}
+	if (h_flag & 2)
+	{
+		ft_push(head->b, ft_pop(head->b, 1), 0);
+		ins->end->val = 10;
+		if (h_flag == 3)
+			ins->end->val = 11;
+	}
+}
+
 void	r_ins(t_lpair *head, int h_flag, int rev_flag, t_list *ins)
 {
 	if (h_flag == 1 && head->a->size == 1)
@@ -80,19 +96,6 @@ void	r_ins(t_lpair *head, int h_flag, int rev_flag, t_list *ins)
 		}
 	}
 	else if (rev_flag == 1)
-	{
-		if (h_flag & 1)
-		{
-			ft_push(head->a, ft_pop(head->a, 1), 0);
-			ins->end->val = 9;
-		}
-		if (h_flag & 2)
-		{
-			ft_push(head->b, ft_pop(head->b, 1), 0);
-			ins->end->val = 10;
-			if (h_flag == 3)
-				ins->end->val = 11;
-		}
-	}
+		rr_ins(head, h_flag, ins);
 	ins->end->next = ft_lalloc(ins, ins->end, 0);
 }

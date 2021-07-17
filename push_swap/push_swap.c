@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:08:29 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 12:43:04 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 12:57:39 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,8 @@ int	main(int argc, char **argv)
 		else
 			ternary_div(&head, 2, ins);
 	}
-	ins_merge(ins);
+	ins_merge(ins->next);
+	ins_merge2(ins->next);
 	print_ins(ins);
 	all_free(&head, ins);
 }

@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/09 00:27:03 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 12:41:11 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/17 12:44:10 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ static t_list	*small_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list *ins)
 	}
 }
 
-static t_list	*middle_div(t_lpair *head, int s_flag, t_ipair *cnt, t_list *ins)
+static t_list	*middle_div(t_lpair *head, int s_flag, \
+t_ipair *cnt, t_list *ins)
 {
 	if (s_flag == 1 || s_flag == 3)
 	{
