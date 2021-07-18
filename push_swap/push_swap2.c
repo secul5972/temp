@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 14:50:04 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/18 13:54:00 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/18 14:28:57 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ int	init_mal(t_lpair *head, char **argv, t_list **ins)
 		size /= 10;
 		flag++;
 	}
-	*ins = ft_make_list(((int)((double)flag / log3) + 1) * 5 \
-	/ 3 * (head->a->size - 1));
+	*ins = ft_make_list(((int)((double)flag / log3) + 1) * 2 \
+	 * (head->a->size - 1));
 	if (!(*ins))
 		return (3);
 	return (1);
