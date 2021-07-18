@@ -6,11 +6,29 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/18 03:15:22 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/18 03:35:24 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/18 14:01:29 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	l_swap(t_list **f, t_list **s)
+{
+	t_list	*temp;
+
+	temp = *f;
+	*f = *s;
+	*s = temp;
+}
+
+void	i_swap(int *f, int *s)
+{
+	int	temp;
+
+	temp = *f;
+	*f = *s;
+	*s = temp;
+}
 
 int	ft_max(int a, int b)
 {
@@ -28,17 +46,11 @@ int	ft_sort_stack(t_lpair *head, t_list *ins)
 	while (ret == 0)
 		ret = ternary_div(head, 1, ins);
 	if (ret == -1)
-	{
-		all_free(head, ins);
 		return (0);
-	}
 	while (head->b->size)
 	{
 		if (ret == -1)
-		{
-			all_free(head, ins);
 			return (0);
-		}
 		if (head->a->next->size)
 			ret = ternary_div(head, 3, ins);
 		else

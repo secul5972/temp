@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 09:08:29 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/18 03:33:52 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/18 13:44:13 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,62 +50,33 @@ static void	print_ins(t_list *ins)
 	}
 }
 
-static int	input_pre(t_list *head, int argc, char **argv)
-{
-	int		i;
-	int		flag;
-	long	val;
-	char	*temp;
-
-	i = 0;
-	if (argc == 1)
-		return (2);
-	while (argv[++i])
-	{
-		temp = argv[i];
-		flag = 1;
-		while (*temp)
-		{
-			val = ft_atoi(&temp);
-			if (flag && (val > 2147483647 || val < -2147483648))
-				return (1);
-			if (!flag && (val > 2147483647 || val < -2147483648))
-				continue ;
-			head->end->next = ft_lalloc(head, head->end, val);
-			flag = 0;
-		}
-	}
-	head->next->size = head->size;
-	return (2);
-}
-
 static int	init(t_lpair *head, int argc, char **argv, t_list **ins)
 {
 	t_list	*i;
 	t_list	*j;
 	int		flag;
 
-	init_mal(head, argc, ins);
-	if (!(*ins) || !(head->a) || !(head->b))
-		return (2);
-	flag = input_pre(head->a, argc, argv);
+	head->a = 0;
+	head->b = 0;
+	*ins = 0;
+	if (argc == 1)
+		return (1);
+	flag = init_mal(head, argv, ins);
 	i = head->a->next;
-	while (flag != 1 && i)
+	while (flag < 2 && i)
 	{
 		j = i->next;
 		while (j)
 		{
 			if (i->val == j->val)
-				return (1);
+				return (2);
 			if (i->val > j->val)
 				flag = 0;
 			j = j->next;
 		}
 		i = i->next;
 	}
-	if (flag)
-		return (flag);
-	return (0);
+	return (flag);
 }
 
 int	main(int argc, char **argv)
@@ -117,16 +88,19 @@ int	main(int argc, char **argv)
 	ret = init(&head, argc, argv, &ins);
 	if (ret)
 	{
-		if (ret != 2)
+		if (ret == 2)
 			write(2, "Error\n", 6);
+		if (ret == 3)
+			write(2, "Memerror\n", 9);
 		all_free(&head, ins);
-		return (-1);
+		return (0);
 	}
 	ret = ft_sort_stack(&head, ins);
 	if (!ret)
 	{
 		all_free(&head, ins);
-		return (-1);
+		write(2, "Memerror\n", 9);
+		return (0);
 	}
 	ins_merge(ins->next);
 	ins_merge2(ins->next);

@@ -6,28 +6,17 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/08 10:38:14 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/18 03:33:24 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/18 14:01:52 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	l_swap(t_list **f, t_list **s)
+static void	w_space(char **s)
 {
-	t_list	*temp;
-
-	temp = *f;
-	*f = *s;
-	*s = temp;
-}
-
-void	i_swap(int *f, int *s)
-{
-	int	temp;
-
-	temp = *f;
-	*f = *s;
-	*s = temp;
+	while (**s == 9 || **s == 10 || **s == 11 \
+	|| **s == 12 || **s == 13 || **s == 32)
+		(*s)++;
 }
 
 long	ft_atoi(char **s)
@@ -39,9 +28,7 @@ long	ft_atoi(char **s)
 	m_flag = 0;
 	flag = 1;
 	ret = 0;
-	while (**s == 9 || **s == 10 || **s == 11 \
-	|| **s == 12 || **s == 13 || **s == 32)
-		(*s)++;
+	w_space(s);
 	if (**s == '+' || **s == '-')
 		m_flag = *(*s)++ - '+';
 	while ('0' <= **s && **s <= '9')
@@ -50,6 +37,7 @@ long	ft_atoi(char **s)
 		ret += *(*s)++ - '0';
 		flag = 0;
 	}
+	w_space(s);
 	if (m_flag != 0)
 		ret *= -1;
 	if (flag)

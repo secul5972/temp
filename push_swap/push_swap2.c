@@ -6,28 +6,60 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 14:50:04 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/17 17:34:54 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/18 13:54:00 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	init_mal(t_lpair *head, int argc, t_list **ins)
+static int	input_pre(t_list *head, char **argv, int i)
+{
+	long	val;
+	char	*temp;
+
+	while (argv[++i])
+	{
+		temp = argv[i];
+		while (*temp)
+		{
+			val = ft_atoi(&temp);
+			if (val > 2147483647 || val < -2147483648)
+				return (2);
+			head->end->next = ft_lalloc(head, head->end, val);
+			if (!head->end)
+				return (3);
+		}
+	}
+	if (argv[1] != 0)
+		head->next->size = head->size;
+	return (1);
+}
+
+int	init_mal(t_lpair *head, char **argv, t_list **ins)
 {
 	double	log3;
-	int		digit;
 	int		size;
+	int		flag;
 
-	log3 = 0.477121255;
-	digit = 0;
-	size = argc - 1;
-	while (size)
-	{
-		size /= 10;
-		digit++;
-	}
-	*ins = ft_make_list(((int)((double)digit / log3) + 1) * 5 / 3 * (argc - 1));
 	head->a = ft_lalloc(0, 0, 0);
 	head->a->end = head->a;
 	head->b = ft_lalloc(0, 0, 0);
+	if (!(head->a) || !(head->b))
+		return (3);
+	flag = input_pre(head->a, argv, 0);
+	if (flag == 2 || flag == 3)
+		return (flag);
+	log3 = 0.477121255;
+	flag = 0;
+	size = head->a->size - 1;
+	while (size)
+	{
+		size /= 10;
+		flag++;
+	}
+	*ins = ft_make_list(((int)((double)flag / log3) + 1) * 5 \
+	/ 3 * (head->a->size - 1));
+	if (!(*ins))
+		return (3);
+	return (1);
 }
