@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
+/*   By: oseungcheol <oseungcheol@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/17 14:50:04 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/07/18 14:28:57 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/07/28 18:43:48 by oseungcheol      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ static int	input_pre(t_list *head, char **argv, int i)
 {
 	long	val;
 	char	*temp;
+	t_list	*l_temp;
 
 	while (argv[++i])
 	{
@@ -25,7 +26,8 @@ static int	input_pre(t_list *head, char **argv, int i)
 			val = ft_atoi(&temp);
 			if (val > 2147483647 || val < -2147483648)
 				return (2);
-			head->end->next = ft_lalloc(head, head->end, val);
+			l_temp = head->end;
+			l_temp->next = ft_lalloc(head, head->end, val);
 			if (!head->end)
 				return (3);
 		}
