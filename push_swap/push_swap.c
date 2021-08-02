@@ -43,7 +43,7 @@ static void	print_ins(t_list *ins)
 	t_list	*curr;
 
 	curr = ins->next;
-	while (curr)
+	while (curr && curr->val)
 	{
 		print_ins_con(curr);
 		curr = curr->next;
