@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:24:19 by oseungcheol       #+#    #+#             */
-/*   Updated: 2021/08/20 11:29:11 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/08/20 14:22:01 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,8 @@ typedef struct s_comp_num
 void	my_mlx_pixel_put(t_img *img, int x, int y, int color);
 int	ft_streq(const char *s1, const char *s2);
 int ft_min(int a, int b);
+long ft_atol(const char *str);
+int ft_strlen(const char *str);
+double ft_atod(const char *str);
 
 #endif
