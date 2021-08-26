@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:30:29 by oseungcheol       #+#    #+#             */
-/*   Updated: 2021/08/20 14:22:06 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/08/26 13:32:13 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	ft_streq(const char *s1, const char *s2)
 
 int ft_min(int a, int b)
 {
-    if (a > b)
+    if (a < b)
         return a;
     else
         return b;
