@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:24:19 by oseungcheol       #+#    #+#             */
-/*   Updated: 2021/08/26 14:16:53 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/08/31 00:52:39 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define WIDTH 800
 # define LENGTH 800
 # define LOOP_LIMIT 255
-# define ZOOM_RATE 1.5
+# define ZOOM_RATE 1.3
 
 typedef struct s_d_pair
 {
@@ -46,6 +46,7 @@ typedef struct s_frac_data
 	void *mlx;
 	t_img img;
 	t_d_pair center;
+	t_d_pair r_center;
 	t_d_pair w_l;
 	t_d_pair julia_comp;
 }	t_frac_data;

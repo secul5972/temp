@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:25:54 by oseungcheol       #+#    #+#             */
-/*   Updated: 2021/08/28 23:56:21 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/08/31 01:02:29 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ int fract_ol_init(t_frac_data *frac, t_img *img, char **argc)
 	frac->pixel = ft_min(WIDTH, LENGTH) / 4;
 	frac->w_l.x = WIDTH / frac->pixel;
 	frac->w_l.y = LENGTH / frac->pixel;
+	frac->r_center.x = 0;
+	frac->r_center.y = 0;
 	frac->julia_comp = get_julia_para(frac->f_flag, argc);
 	return 1;
 }
@@ -134,51 +136,33 @@ int press_wheel(int keycode, int x, int y, t_frac_data *frac)
 
 	if (keycode == 4 || keycode == 5)
 	{
-		mlx_mouse_get_pos(frac->win, &x, &y);
 		mouse.x = (double)x / frac->pixel - frac->w_l.x / 2;
 		mouse.y = (double)y / frac->pixel - frac->w_l.y / 2;
-		if (keycode == 4)
+		if (keycode == 5)
 		{
-			if (mouse.x < 0)
-				frac->center.x = (frac->w_l.x + mouse.x) * (ZOOM_RATE - 1);
-			else
-				frac->center.x = -mouse.x * (ZOOM_RATE - 1);
-			if (mouse.y < 0)
-				frac->center.y = (frac->w_l.y + mouse.y) * (ZOOM_RATE - 1);
-			else
-				frac->center.y = -mouse.y * (ZOOM_RATE - 1);
+			frac->center.x += -mouse.x * (ZOOM_RATE - 1);
+			frac->center.y += -mouse.y * (ZOOM_RATE - 1);
 			frac->pixel /= ZOOM_RATE;
 			frac->w_l.x *= ZOOM_RATE;
 			frac->w_l.y *= ZOOM_RATE;
 		}
 		else
 		{
-			if (mouse.x < 0)
-				frac->center.x = (frac->w_l.x + mouse.x) * (ZOOM_RATE - 1);
+			if (mouse.x > 0)
+				frac->center.x += (frac->w_l.x / 2 - mouse.x) / ZOOM_RATE + mouse.x - frac->w_l.x / ZOOM_RATE / 2;
 			else
-				frac->center.x = -mouse.x * (ZOOM_RATE - 1);
-			if (mouse.y < 0)
-				frac->center.y = (frac->w_l.y + mouse.y) * (ZOOM_RATE - 1);
+				frac->center.x += -(frac->w_l.x / 2 + mouse.x) / ZOOM_RATE + mouse.x + frac->w_l.x / ZOOM_RATE / 2;
+			if (mouse.y > 0)
+				frac->center.y += (frac->w_l.y / 2 - mouse.y) / ZOOM_RATE + mouse.y - frac->w_l.x / ZOOM_RATE / 2;
 			else
-				frac->center.y = -mouse.y * (ZOOM_RATE - 1);
+				frac->center.y += -(frac->w_l.y / 2 + mouse.y) / ZOOM_RATE + mouse.y + frac->w_l.x / ZOOM_RATE / 2;
 			frac->pixel *= ZOOM_RATE;
 			frac->w_l.x /= ZOOM_RATE;
 			frac->w_l.y /= ZOOM_RATE;
 		}
-		if (mouse.x < 0)
-			frac->center.x = (frac->w_l.x + mouse.x) * (ZOOM_RATE - 1);
-		else
-			frac->center.x = -mouse.x * (ZOOM_RATE - 1);
-		if (mouse.y < 0)
-			frac->center.y = (frac->w_l.y + mouse.y) * (ZOOM_RATE - 1);
-		else
-			frac->center.y = -mouse.y * (ZOOM_RATE - 1);
-
 		draw_frac(frac);
 		mlx_put_image_to_window(frac->mlx, frac->win, frac->img.img_ptr, 0, 0);
-		frac->wheel_cnt = 0;
 	}
-
 	return 0;
 }
 
