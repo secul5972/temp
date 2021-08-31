@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:25:54 by oseungcheol       #+#    #+#             */
-/*   Updated: 2021/08/31 01:51:43 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/08/31 11:15:17 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	fract_ol_init(t_frac_data *frac, t_img *img, char **argc)
 	if (frac->mlx == 0 || frac->win == 0 || img->img_ptr == 0 || \
 	img->data_ptr == 0)
 	{
-		printf("mlx error\n");
+		write(2, "mlx error\n", 11);
 		return (0);
 	}
 	frac->center.x = 0;

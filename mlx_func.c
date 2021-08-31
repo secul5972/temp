@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/31 01:10:08 by seungcoh          #+#    #+#             */
-/*   Updated: 2021/08/31 01:44:53 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/08/31 11:30:32 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	draw_frac(t_frac_data *frac)
 {
 	int			i;
 	int			j;
-	int			l;
 	t_d_pair	p;
 
 	i = 0;

@@ -6,7 +6,7 @@
 /*   By: seungcoh <seungcoh@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/18 14:24:19 by oseungcheol       #+#    #+#             */
-/*   Updated: 2021/08/31 01:40:01 by seungcoh         ###   ########.fr       */
+/*   Updated: 2021/08/31 11:13:34 by seungcoh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "mlx/mlx.h"
 # include <stdio.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 # define WIDTH 800
 # define LENGTH 800
